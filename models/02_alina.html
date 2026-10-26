@@ -41,6 +41,15 @@
     
     <style>
         html { scroll-behavior: smooth; }
+
+        /* --- 画像・コンテンツ保護用CSS --- */
+        img {
+            -webkit-touch-callout: none; /* iOS Safari等での長押し保存メニュー非表示 */
+            -webkit-user-select: none;   /* Safari */
+            -moz-user-select: none;      /* Firefox */
+            -ms-user-select: none;       /* IE/Edge */
+            user-select: none;          /* 画像選択・ドラッグ選択の防止 */
+        }
     </style>
 </head>
 <body class="bg-[#1C110C] text-[#EAE6E1] font-sans antialiased selection:bg-[#C89B3C] selection:text-white overflow-x-hidden min-h-screen flex flex-col justify-between">
@@ -50,8 +59,8 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row justify-between items-center py-4 md:h-28 gap-4">
                 <div class="text-center md:text-left cursor-pointer">
-                    <a href="../index.html" class="font-serif text-2xl md:text-3xl tracking-[0.25em] font-bold text-[#C89B3C] uppercase">
-                        FAIRY MODELS <span class="font-light text-[#DDCB82]">AGENCY</span>
+                    <a href="../index.html" class="flex items-center justify-center md:justify-start">
+                        <img src="https://raw.githubusercontent.com/zv4s8ld3/fma_2/main/assets/fma_logo_yoko.svg" alt="FAIRY MODELS AGENCY" class="h-8 sm:h-10 md:h-12 w-auto object-contain">
                     </a>
                 </div>
 
@@ -187,6 +196,18 @@
     </button>
 
     <script>
+        // --- 画像保護用スクリプト（右クリック・ドラッグ禁止） ---
+        document.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+        });
+
+        document.addEventListener('dragstart', (e) => {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+            }
+        });
+
+        // --- TOPへ戻るボタン制御 ---
         window.addEventListener('scroll', () => {
             const btn = document.getElementById('scrollTopBtn');
             if (window.scrollY > 300) { 
