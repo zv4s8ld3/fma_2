@@ -74,6 +74,15 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* --- 画像・コンテンツ保護用CSS --- */
+        img {
+            -webkit-touch-callout: none; /* iOS Safari等での長押し保存メニュー非表示 */
+            -webkit-user-select: none;   /* Safari */
+            -moz-user-select: none;      /* Firefox */
+            -ms-user-select: none;       /* IE/Edge */
+            user-select: none;          /* 画像選択・ドラッグ選択の防止 */
+        }
     </style>
 </head>
 <body class="bg-[#1C110C] text-[#EAE6E1] font-sans antialiased selection:bg-[#C89B3C] selection:text-white overflow-x-hidden">
@@ -282,6 +291,19 @@
 
     <!-- SCRIPTS -->
     <script>
+    // --- 画像保護用スクリプト（右クリック・ドラッグ禁止） ---
+    document.addEventListener('contextmenu', (e) => {
+        // 右クリックメニューの表示を抑止
+        e.preventDefault();
+    });
+
+    document.addEventListener('dragstart', (e) => {
+        // 画像要素のドラッグ保存を抑止
+        if (e.target.tagName === 'IMG') {
+            e.preventDefault();
+        }
+    });
+
     // --- ハンバーガーメニュー制御 ---
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
