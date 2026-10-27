@@ -6,17 +6,16 @@
     
     <!-- SEO & OGP -->
     <title>FAIRY MODELS AGENCY | International High-Fashion Models</title>
-    <meta name="description" content="国内外のハイファッション広告・メディアに特化したモデルエージェンシー。確かな表現力と独自のアイデンティティを備えたモデルが、貴社のブランド価値を最も美しい形で体現・発信します。FAIRY MODELS AGENCY represents top-tier international models with profound expression and distinct identity. We elevate your brand’s presence through global fashion campaigns and editorials.">
+    <meta name="description" content="国内外のハイファッション広告・メディアに特化したモデルエージェンシー。FAIRY MODELS AGENCY represents top-tier international models with profound expression and distinct identity.">
     <meta property="og:title" content="FAIRY MODELS AGENCY | International High-Fashion Models">
-    <meta property="og:description" content="国内外のハイファッション広告・メディアに特化したモデルエージェンシー。確かな表現力と独自のアイデンティティを備えたモデルが、貴社のブランド価値を最も美しい形で体現・発信します。FAIRY MODELS AGENCY represents top-tier international models with profound expression and distinct identity. We elevate your brand’s presence through global fashion campaigns and editorials.">
+    <meta property="og:description" content="国内外のハイファッション広告・メディアに特化したモデルエージェンシー。">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:description" content="国内外のハイファッション広告・メディアに特化したモデルエージェンシー。確かな表現力と独自のアイデンティティを備えたモデルが、貴社のブランド価値を最も美しい形で体現・発信します。FAIRY MODELS AGENCY represents top-tier international models with profound expression and distinct identity. We elevate your brand’s presence through global fashion campaigns and editorials.">
 
     <!-- Fonts & Tailwind -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -28,11 +27,11 @@
                     },
                     colors: {
                         brand: {
-                            dark: '#1C110C',      /* エスプレッソのような極深ブラウン */
-                            medium: '#2A1A14',    /* ビターチョコレートブラウン */
+                            dark: '#1C110C',      /* エスプレッソブラウン */
+                            medium: '#2A1A14',    /* ビターチョコレート */
                             light: '#3D261C',     /* ココアブラウン */
-                            gold: '#C89B3C',      /* 鈍く光るアンティークゴールド */
-                            lightgold: '#DDCB82'  /* 柔らかなシャンパンゴールド */
+                            gold: '#C89B3C',      /* アンティークゴールド */
+                            lightgold: '#DDCB82'  /* シャンパンゴールド */
                         }
                     }
                 }
@@ -67,7 +66,7 @@
         .fade-in-up {
             opacity: 0;
             transform: translateY(8px);
-            transition: opacity 2.2s cubic-bezier(0.19, 1, 0.22, 1), transform 2.2s cubic-bezier(0.19, 1, 0.22, 1);
+            transition: opacity 1.8s cubic-bezier(0.19, 1, 0.22, 1), transform 1.8s cubic-bezier(0.19, 1, 0.22, 1);
             will-change: opacity, transform;
         }
         .fade-in-up.is-visible {
@@ -75,43 +74,59 @@
             transform: translateY(0);
         }
 
-        /* --- 画像・コンテンツ保護用CSS --- */
+        /* 画像保護用CSS */
         img {
-            -webkit-touch-callout: none; /* iOS Safari等での長押し保存メニュー非表示 */
-            -webkit-user-select: none;   /* Safari */
-            -moz-user-select: none;      /* Firefox */
-            -ms-user-select: none;       /* IE/Edge */
-            user-select: none;          /* 画像選択・ドラッグ選択の防止 */
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
         }
     </style>
 </head>
 <body class="bg-[#1C110C] text-[#EAE6E1] font-sans antialiased selection:bg-[#C89B3C] selection:text-white overflow-x-hidden">
 
-    <!-- HEADER: 極上ブラウンの透過背景 -->
+    <!-- HEADER: 左上ロゴ + ナビゲーション（MODELSプルダウン付き） -->
     <header class="fixed w-full top-0 z-50 bg-[#1C110C]/90 backdrop-blur-md border-b border-white/5 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4 md:h-28 relative">
+            <div class="flex justify-between items-center py-4 md:h-24 relative">
                 
-                <!-- ロゴ部分：FAIRY MODELS AGENCY -->
-                <div class="text-left md:text-center cursor-pointer flex-1 md:flex-none flex items-center" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
-                    <img src="https://raw.githubusercontent.com/zv4s8ld3/fma_2/main/assets/fma_logo_yoko.svg" alt="FAIRY MODELS AGENCY" class="h-8 sm:h-10 md:h-12 w-auto object-contain">
+                <!-- 左上ロゴ配置 -->
+                <div class="cursor-pointer flex items-center" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+                    <img src="https://raw.githubusercontent.com/zv4s8ld3/fma_2/main/assets/fma_logo_yoko.svg" alt="Fairy Models Agency" class="h-8 sm:h-10 md:h-11 w-auto object-contain">
                 </div>
 
                 <!-- PC用ナビゲーション (md以上で表示) -->
-                <nav class="hidden md:flex space-x-10 text-xs tracking-[0.2em] font-medium text-gray-400">
-                    <a href="#about" class="hover:text-[#C89B3C] transition-colors">ABOUT</a>
-                    <a href="#models" class="hover:text-[#C89B3C] transition-colors">MODELS</a>
-                    <a href="#news" class="hover:text-[#C89B3C] transition-colors">NEWS</a>
-                    <a href="#contact" class="hover:text-[#C89B3C] transition-colors">CONTACT</a>
+                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8 text-xs tracking-[0.2em] font-medium text-gray-300">
+                    
+                    <!-- MODELS (プルダウンメニュー) -->
+                    <div class="relative group py-2">
+                        <a href="#models" class="hover:text-[#C89B3C] transition-colors inline-flex items-center gap-1 uppercase">
+                            MODELS
+                            <svg class="w-3 h-3 text-gray-400 group-hover:text-[#C89B3C] transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <!-- プルダウンメニュー -->
+                        <div class="absolute left-0 top-full hidden group-hover:block w-36 bg-[#110A07]/95 border border-white/10 backdrop-blur-md rounded shadow-xl py-2 transition-all">
+                            <a href="./models_woman.html" class="block px-4 py-2 text-[11px] text-gray-300 hover:text-[#C89B3C] hover:bg-white/5 transition-colors">WOMAN</a>
+                            <a href="./models_man.html" class="block px-4 py-2 text-[11px] text-gray-300 hover:text-[#C89B3C] hover:bg-white/5 transition-colors">MAN</a>
+                            <a href="#models" class="block px-4 py-2 text-[11px] text-[#C89B3C] hover:bg-white/5 transition-colors font-semibold">ALL</a>
+                        </div>
+                    </div>
+
+                    <a href="./artist.html" class="hover:text-[#C89B3C] transition-colors uppercase">ARTIST</a>
+                    <a href="./direct_booking.html" class="hover:text-[#C89B3C] transition-colors uppercase">DIRECT BOOKING</a>
+                    <a href="#news" class="hover:text-[#C89B3C] transition-colors uppercase">NEWS</a>
+                    <a href="#contact" class="hover:text-[#C89B3C] transition-colors uppercase">CONTACT</a>
+                    <a href="./entry.html" class="hover:text-[#1C110C] hover:bg-[#C89B3C] border border-[#C89B3C] text-[#C89B3C] px-3 py-1.5 rounded transition-all uppercase">応募フォーム</a>
                 </nav>
 
-                <!-- スマホ用ハンバーガーボタン (md未満で表示) -->
+                <!-- スマホ用ハンバーガーボタン (md未満) -->
                 <button id="menuBtn" class="block md:hidden text-[#C89B3C] focus:outline-none p-2 relative z-50" aria-label="Menu">
-                    <!-- 三本線アイコン -->
                     <svg id="iconMenu" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                     </svg>
-                    <!-- ×バツアイコン (初期状態は非表示) -->
                     <svg id="iconClose" class="w-6 h-6 hidden transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
                     </svg>
@@ -120,56 +135,58 @@
             </div>
         </div>
 
-        <!-- スマホ用スライドメニューエリア (md未満で表示) -->
+        <!-- スマホ用スライドメニュー (md未満) -->
         <div id="mobileMenu" class="hidden md:hidden bg-[#110A07]/95 backdrop-blur-md border-b border-white/10 px-6 py-6 transition-all duration-300">
-            <nav class="flex flex-col space-y-5 text-center font-serif text-sm tracking-[0.25em]">
-                <a href="#about" class="mobile-link text-gray-300 hover:text-[#C89B3C] py-1 border-b border-white/5 transition-colors">ABOUT</a>
-                <a href="#models" class="mobile-link text-gray-300 hover:text-[#C89B3C] py-1 border-b border-white/5 transition-colors">MODELS</a>
+            <nav class="flex flex-col space-y-4 text-center text-xs tracking-[0.2em]">
+                <div class="border-b border-white/5 pb-3">
+                    <span class="text-xs text-[#C89B3C] font-semibold block mb-2">MODELS</span>
+                    <div class="flex justify-center space-x-4 text-[11px] text-gray-300">
+                        <a href="./models_woman.html" class="mobile-link hover:text-[#C89B3C]">WOMAN</a>
+                        <span>/</span>
+                        <a href="./models_man.html" class="mobile-link hover:text-[#C89B3C]">MAN</a>
+                        <span>/</span>
+                        <a href="#models" class="mobile-link text-[#C89B3C]">ALL</a>
+                    </div>
+                </div>
+                <a href="./artist.html" class="mobile-link text-gray-300 hover:text-[#C89B3C] py-1 border-b border-white/5 transition-colors">ARTIST</a>
+                <a href="./direct_booking.html" class="mobile-link text-gray-300 hover:text-[#C89B3C] py-1 border-b border-white/5 transition-colors">DIRECT BOOKING</a>
                 <a href="#news" class="mobile-link text-gray-300 hover:text-[#C89B3C] py-1 border-b border-white/5 transition-colors">NEWS</a>
-                <a href="#contact" class="mobile-link text-gray-300 hover:text-[#C89B3C] py-1 transition-colors">CONTACT</a>
+                <a href="#contact" class="mobile-link text-gray-300 hover:text-[#C89B3C] py-1 border-b border-white/5 transition-colors">CONTACT</a>
+                <a href="./entry.html" class="mobile-link text-[#C89B3C] font-bold py-2 border border-[#C89B3C] rounded transition-colors">応募フォーム</a>
             </nav>
         </div>
     </header>
 
-    <!-- SECTION 0: HERO (シネマティック動画エリア) -->
+    <!-- SECTION 0: HERO (中央にテキスト横一列配置) -->
     <section class="relative h-screen w-full overflow-hidden flex items-center justify-center bg-[#1C110C]">
         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0 opacity-60">
             <source src="./fma_hero.mp4" type="video/mp4">
         </video>
-        <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-[#1C110C]/50 to-[#1C110C] z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/50 via-[#1C110C]/40 to-[#1C110C] z-10"></div>
         
-        <div class="relative z-20 text-center px-4 max-w-4xl mx-auto mt-20">
-            <span class="font-serif text-[#C89B3C] text-xs md:text-sm tracking-[0.4em] block mb-4 uppercase">International Model Agency</span>
-            <h1 class="font-serif text-4xl md:text-6xl lg:text-7xl text-white tracking-[0.2em] leading-tight mb-8 uppercase">
-                The Art of <br><span class="font-light text-[#DDCB82]">Expression</span>
+        <!-- 動画上テキスト：横一列・中央配置 -->
+        <div class="relative z-20 text-center px-4 w-full max-w-6xl mx-auto">
+            <h1 class="font-serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-[0.2em] whitespace-nowrap uppercase font-light drop-shadow-lg">
+                Fairy Models Agency
             </h1>
-            <div class="w-16 h-[1px] bg-[#C89B3C] mx-auto mb-8"></div>
-            <a href="#about" class="inline-block border border-[#C89B3C] text-[#C89B3C] hover:bg-[#C89B3C] hover:text-white px-8 py-4 tracking-[0.25em] text-[10px] font-medium transition-all duration-300">
-                ENTER ARCHIVE
-            </a>
         </div>
     </section>
 
-    <!-- SECTION 1: ABOUT -->
-    <section id="about" class="py-28 px-4 max-w-4xl mx-auto text-center">
-        <h2 class="font-serif text-2xl md:text-3xl text-white tracking-[0.25em] mb-6 uppercase">ELEVATE YOUR BRAND</h2>
-        <div class="w-8 h-[1px] bg-[#C89B3C] mx-auto mb-8"></div>
-        <p class="text-gray-300 leading-relaxed font-light text-base md:text-lg mb-4">国内外のハイファッション広告・メディアに特化したモデルエージェンシー。</p>
-        <p class="text-gray-400 leading-relaxed font-light text-sm md:text-base">確かな表現力と独自のアイデンティティを備えたモデルたちが、<br class="hidden md:block">貴社のブランド価値を最も美しい形で社会へと体現・発信します。</p>
-    </section>
+    <!-- ※Aboutセクションは削除済み -->
 
-    <!-- SECTION 2: MODELS -->
+    <!-- SECTION 1: MODELS (1列4人配置・グリッド設定) -->
     <section id="models" class="py-20 max-w-[1400px] mx-auto px-4 border-t border-white/5">
         <div class="text-center mb-16">
-            <h2 class="font-serif text-2xl tracking-[0.3em] text-[#C89B3C] uppercase">Our Digitals</h2>
-            <p class="text-[10px] tracking-widest text-gray-500 mt-2 uppercase">Selected Models</p>
+            <h2 class="font-serif text-2xl tracking-[0.3em] text-[#C89B3C] uppercase">MODELS</h2>
+            <p class="text-[10px] tracking-widest text-gray-500 mt-2 uppercase">Selected Casts</p>
         </div>
 
-        <div id="model-grid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-8"></div>
+        <!-- 1列4人配置（PC: grid-cols-4） -->
+        <div id="model-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"></div>
     </section>
 
-    <!-- SECTION 3: NEWS -->
-    <section id="news" class="py-20 md:py-28 border-b border-white/5 bg-[#1C110C]">
+    <!-- SECTION 2: NEWS -->
+    <section id="news" class="py-20 md:py-28 border-t border-b border-white/5 bg-[#1C110C]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
                 <div class="space-y-2">
@@ -185,7 +202,7 @@
                             <time datetime="2026-10-23" class="font-serif text-xs text-[#DDCB82]/60 tracking-widest w-24">2026.10.23</time>
                             <span class="text-[10px] tracking-widest bg-white/5 text-gray-400 px-2 py-0.5 rounded w-max">INFO</span>
                             <h3 class="text-sm text-gray-300 group-hover:text-[#C89B3C] transition-colors tracking-wide flex-1">
-                                【新規所属】「ユミカ（YUMIKA）」が新たに参加しました！
+                                【新規所属】「YUMIKA(ユミカ)」が新たに参加しました。
                             </h3>
                         </article>
                     </a>
@@ -196,7 +213,7 @@
                             <time datetime="2026-10-23" class="font-serif text-xs text-[#DDCB82]/60 tracking-widest w-24">2026.10.23</time>
                             <span class="text-[10px] tracking-widest bg-white/5 text-gray-400 px-2 py-0.5 rounded w-max">INFO</span>
                             <h3 class="text-sm text-gray-300 group-hover:text-[#C89B3C] transition-colors tracking-wide flex-1">
-                                【新規所属】「ALINA（アリーナ）」が新たに参加しました！
+                                【新規所属】「ALINA（アリーナ）」が新たに参加しました。
                             </h3>
                         </article>
                     </a>
@@ -207,23 +224,12 @@
                             <time datetime="2026-10-23" class="font-serif text-xs text-[#DDCB82]/60 tracking-widest w-24">2026.10.23</time>
                             <span class="text-[10px] tracking-widest bg-white/5 text-gray-400 px-2 py-0.5 rounded w-max">INFO</span>
                             <h3 class="text-sm text-gray-300 group-hover:text-[#C89B3C] transition-colors tracking-wide flex-1">
-                                【新規所属】「FADILE（ファディル）」が新たに参加しました！
+                                【新規所属】「FADILE（ファディル）」が新たに参加しました。
                             </h3>
                         </article>
                     </a>
 
-                    <!-- Article 4: AGA -->
-                    <a href="./news/notice_20261023_04_aga.html" class="block py-5 group">
-                        <article class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
-                            <time datetime="2026-10-23" class="font-serif text-xs text-[#DDCB82]/60 tracking-widest w-24">2026.10.23</time>
-                            <span class="text-[10px] tracking-widest bg-white/5 text-gray-400 px-2 py-0.5 rounded w-max">INFO</span>
-                            <h3 class="text-sm text-gray-300 group-hover:text-[#C89B3C] transition-colors tracking-wide flex-1">
-                                【新規所属】「AGA（アガ）」が新たに参加しました！
-                            </h3>
-                        </article>
-                    </a>
-
-                    <!-- Article 5: サイト開設案内 -->
+                    <!-- Article 4: サイト開設案内 -->
                     <a href="./news/notice_20260918.html" class="block py-5 group">
                         <article class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
                             <time datetime="2026-09-15" class="font-serif text-xs text-[#DDCB82]/60 tracking-widest w-24">2026.09.15</time>
@@ -244,31 +250,54 @@
         </div>
     </section>
 
-    <!-- SECTION 4: CONTACT -->
+    <!-- SECTION 3: CONTACT & アクセスマップ & 応募フォーム -->
     <section id="contact" class="py-24 bg-[#2A1A14] border-t border-white/5 text-[#DDCB82]">
-        <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-16">
-            <div>
-                <h2 class="font-serif text-3xl text-[#C89B3C] mb-8 tracking-[0.15em]">CONTACT</h2>
-                <div class="space-y-4 font-light text-sm tracking-wide text-[#DDCB82]/90">
-                    <p class="text-base text-[#C89B3C] font-medium font-serif">FAIRY MODELS AGENCY</p>
-                    <p class="text-gray-400">Operating by ShopKloset inc.</p>
-                    <p class="text-gray-400">MAIL: info@fairy-model.com <span class="text-xs text-gray-500 block md:inline md:ml-2">(開設準備中)</span></p>
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+                <div>
+                    <h2 class="font-serif text-3xl text-[#C89B3C] mb-8 tracking-[0.15em]">CONTACT</h2>
+                    <div class="space-y-4 font-light text-sm tracking-wide text-[#DDCB82]/90">
+                        <p class="text-base text-[#C89B3C] font-medium font-serif">FAIRY MODELS AGENCY</p>
+                        <p class="text-gray-400">Operating by ShopKloset inc.</p>
+                        <p class="text-gray-400">MAIL: info@fairy-model.com</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col justify-center space-y-6">
+                    <p class="text-xs text-gray-400 font-light tracking-widest leading-relaxed">
+                        出演・キャスティングのご依頼、各種お問い合わせ、モデル応募は下記専用フォームより承っております。
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <a href="./contact.html" class="group block bg-[#C89B3C] text-[#1C110C] py-4 text-center rounded transition-all duration-300 hover:bg-[#DDCB82] shadow-lg">
+                            <span class="block text-[10px] tracking-[0.15em] font-medium opacity-60 mb-0.5">お問い合わせ</span>
+                            <span class="block text-xs tracking-[0.2em] font-bold uppercase">Contact Form</span>
+                        </a>
+                        <a href="./entry.html" class="group block border border-[#C89B3C] text-[#C89B3C] hover:bg-[#C89B3C] hover:text-[#1C110C] py-4 text-center rounded transition-all duration-300 shadow-lg">
+                            <span class="block text-[10px] tracking-[0.15em] font-medium opacity-80 mb-0.5">モデル応募</span>
+                            <span class="block text-xs tracking-[0.2em] font-bold uppercase">Entry Form</span>
+                        </a>
+                    </div>
                 </div>
             </div>
-            
-            <div class="flex flex-col justify-center space-y-6">
-                <p class="text-xs text-gray-400 font-light tracking-widest leading-relaxed">
-                    出演・キャスティングのご依頼、各種オーディションに関するお問い合わせ、その他ご相談は専用のオンラインフォームより承っております。
-                </p>
-                <div>
-                    <a href="./contact.html" class="group inline-block w-full bg-[#C89B3C] text-[#1C110C] py-4 text-center rounded transition-all duration-300 hover:bg-[#DDCB82] shadow-lg hover:shadow-[0_0_20px_rgba(200,155,60,0.3)]">
-                        <span class="block text-[10px] tracking-[0.15em] font-medium opacity-60 mb-0.5">お問い合わせはコチラ</span>
-                        <span class="block text-xs tracking-[0.2em] font-bold uppercase">Go to Contact Form</span>
-                    </a>
+
+            <!-- アクセスマップ (Google Map埋め込み) -->
+            <div class="pt-8 border-t border-white/10">
+                <h3 class="font-serif text-lg text-[#C89B3C] mb-4 tracking-[0.15em] uppercase">LOCATION ACCESS</h3>
+                <div class="w-full h-72 sm:h-80 rounded overflow-hidden shadow-2xl border border-white/10">
+                    <!-- Google Maps Iframe (適宜実際の住所・埋め込みURLに書き換えてください) -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.7479754723737!2d139.70133657677112!3d35.65858047259469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b563b00109f%3A0x693a00215707027!2z44CS150LMDExMiDmnbHkuq3pg73muIli4Yy66L6C5aC0MS0yMwtC0pQ!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; filter: grayscale(80%) invert(90%) contrast(120%);" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
-    </section>	
+    </section>
 
     <!-- FOOTER -->
     <footer class="bg-[#110A07] py-12 text-center border-t border-white/5 space-y-4">
@@ -291,20 +320,11 @@
 
     <!-- SCRIPTS -->
     <script>
-    // --- 画像保護用スクリプト（右クリック・ドラッグ禁止） ---
-    document.addEventListener('contextmenu', (e) => {
-        // 右クリックメニューの表示を抑止
-        e.preventDefault();
-    });
+    // 右クリック・ドラッグ防止
+    document.addEventListener('contextmenu', (e) => { e.preventDefault(); });
+    document.addEventListener('dragstart', (e) => { if (e.target.tagName === 'IMG') { e.preventDefault(); } });
 
-    document.addEventListener('dragstart', (e) => {
-        // 画像要素のドラッグ保存を抑止
-        if (e.target.tagName === 'IMG') {
-            e.preventDefault();
-        }
-    });
-
-    // --- ハンバーガーメニュー制御 ---
+    // モバイルメニュー制御
     const menuBtn = document.getElementById('menuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     const iconMenu = document.getElementById('iconMenu');
@@ -318,37 +338,36 @@
     }
 
     menuBtn.addEventListener('click', toggleMenu);
-
     mobileLinks.forEach(link => {
         link.addEventListener('click', () => {
-            if (!mobileMenu.classList.contains('hidden')) {
-                toggleMenu();
-            }
+            if (!mobileMenu.classList.contains('hidden')) { toggleMenu(); }
         });
     });
 
-    // --- モデルデータ生成 ---
+    // モデルデータ（ご指示の1段目4名、2段目3名に更新）
     const modelsData = [
-        { name: "ユミカ", size: "170 / 79 / 67 / 85", img: "./assets/models_image/01_yumika/photo_1.jpg", link: "./models/01_yumika.html" },
+        /* 1段目 */
+        { name: "TAKAKO", size: "172 / 80 / 60 / 88", img: "./assets/models_image/takako/photo_1.jpg", link: "./models/takako.html" },
+        { name: "Yumika", size: "170 / 79 / 67 / 85", img: "./assets/models_image/01_yumika/photo_1.jpg", link: "./models/01_yumika.html" },
         { name: "Alina", size: "164 / 82 / 60 / 86", img: "./assets/models_image/02_alina/photo_1.jpg", link: "./models/02_alina.html" },
-        { name: "Fadile", size: "160 / 82 / 62 / 90", img: "./assets/models_image/03_fadile/photo_1.jpg", link: "./models/03_fadile.html" },
-        { name: "Aga", size: "168 / 84 / 60 / 89", img: "./assets/models_image/04_aga/photo_1.jpg", link: "./models/04_aga.html" },
-        { name: "CHARLOTTE N", size: "181 / 84 / 60 / 89", img: "./face_images/k.avif", link: "./face_images/models_data/charlotte_n/model_detail.html" },
-        { name: "KATHY H", size: "175 / 82 / 58 / 87", img: "./face_images/g.avif", link: "./face_images/models_data/kathy_h/model_detail.html" },
-        { name: "OLIVER R", size: "187 / 82 / 58 / 87", img: "./face_images/p.avif", link: "./face_images/models_data/oliver_r/model_detail.html" },
-        { name: "AMBER J", size: "176 / 83 / 59 / 88", img: "./face_images/i.avif", link: "./face_images/models_data/amber_j/model_detail.html" },
+        { name: "Fadie", size: "160 / 82 / 62 / 90", img: "./assets/models_image/03_fadile/photo_1.jpg", link: "./models/03_fadile.html" },
+        
+        /* 2段目 */
+        { name: "Bhuiyan", size: "178 / 85 / 62 / 90", img: "./assets/models_image/bhuiyan/photo_1.jpg", link: "./models/bhuiyan.html" },
+        { name: "Alex", size: "182 / 88 / 74 / 92", img: "./assets/models_image/alex/photo_1.jpg", link: "./models/alex.html" },
+        { name: "KOU", size: "185 / 90 / 76 / 94", img: "./assets/models_image/kou/photo_1.jpg", link: "./models/kou.html" },
     ];
 
     const modelGrid = document.getElementById('model-grid');
     
-    // モデルカードを生成
+    // モデルカードの動的生成
     modelsData.forEach(model => {
         const card = document.createElement('div');
         card.className = "fade-in-up transition-all duration-300 group cursor-pointer text-center";
         
         card.innerHTML = `
             <a href="${model.link}" class="block">
-                <div class="flash-hover aspect-[2/3] w-full bg-[#2A1A14] overflow-hidden relative mb-4">
+                <div class="flash-hover aspect-[2/3] w-full bg-[#2A1A14] overflow-hidden relative mb-4 rounded-sm">
                     <img src="${model.img}" alt="${model.name}" class="w-full h-full object-cover opacity-90 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-100">
                 </div>
                 <div class="pb-2">
@@ -360,7 +379,7 @@
         modelGrid.appendChild(card);
     });
 
-    // --- スクロール連動のアニメーション制御 ---
+    // スクロールアニメーション
     const observerOptions = { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.1 };
     const observer = new IntersectionObserver((entries, observer) => {
         const intersectingEntries = entries.filter(entry => entry.isIntersecting);
@@ -369,13 +388,13 @@
             setTimeout(() => {
                 card.classList.add('is-visible');
                 observer.unobserve(card);
-            }, index * 150); 
+            }, index * 120); 
         });
     }, observerOptions);
 
     document.querySelectorAll('.fade-in-up').forEach(card => { observer.observe(card); });
 
-    // --- Topへ戻るボタン制御 ---
+    // Topへ戻るボタン
     window.addEventListener('scroll', () => {
         const btn = document.getElementById('scrollTopBtn');
         if (window.scrollY > 300) {
