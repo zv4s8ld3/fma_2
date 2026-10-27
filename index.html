@@ -110,11 +110,11 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
-                        <!-- プルダウンメニュー -->
+                        <!-- プルダウンメニュー（WOMAN: 1段目 / MAN: 2段目 / ALL: 全体へ移動） -->
                         <div class="absolute left-0 top-full hidden group-hover:block w-36 bg-[#110A07]/95 border border-white/10 backdrop-blur-md rounded shadow-xl py-2 transition-all">
-                            <a href="./models_woman.html" class="block px-4 py-2 text-[11px] text-[#d7be53] hover:text-[#DDCB82] hover:bg-white/5 transition-colors">WOMAN</a>
-                            <a href="./models_man.html" class="block px-4 py-2 text-[11px] text-[#d7be53] hover:text-[#DDCB82] hover:bg-white/5 transition-colors">MAN</a>
-                            <a href="#models" class="block px-4 py-2 text-[11px] text-[#DDCB82] hover:bg-white/5 transition-colors font-semibold">ALL</a>
+                            <a href="#models-woman" class="block px-4 py-2 text-[11px] text-[#d7be53] hover:text-[#DDCB82] hover:bg-white/5 transition-colors">WOMAN</a>
+                            <a href="#models-man" class="block px-4 py-2 text-[11px] text-[#d7be53] hover:text-[#DDCB82] hover:bg-white/5 transition-colors">MAN</a>
+                            <a href="./models_all.html" class="block px-4 py-2 text-[11px] text-[#DDCB82] hover:bg-white/5 transition-colors font-semibold">ALL</a>
                         </div>
                     </div>
 
@@ -144,11 +144,11 @@
                 <div class="border-b border-white/5 pb-3">
                     <span class="text-xs text-[#d7be53] font-semibold block mb-2">MODELS</span>
                     <div class="flex justify-center space-x-4 text-[11px] text-[#d7be53]">
-                        <a href="./models_woman.html" class="mobile-link hover:text-[#DDCB82]">WOMAN</a>
+                        <a href="#models-woman" class="mobile-link hover:text-[#DDCB82]">WOMAN</a>
                         <span>/</span>
-                        <a href="./models_man.html" class="mobile-link hover:text-[#DDCB82]">MAN</a>
+                        <a href="#models-man" class="mobile-link hover:text-[#DDCB82]">MAN</a>
                         <span>/</span>
-                        <a href="#models" class="mobile-link text-[#DDCB82] font-semibold">ALL</a>
+                        <a href="./models_all.html" class="mobile-link text-[#DDCB82] font-semibold">ALL</a>
                     </div>
                 </div>
                 <a href="./artist.html" class="mobile-link text-[#d7be53] hover:text-[#DDCB82] py-1 border-b border-white/5 transition-colors">ARTIST</a>
@@ -174,14 +174,22 @@
         </div>
     </section>
 
-    <!-- SECTION 1: MODELS (1列4人配置) -->
+    <!-- SECTION 1: MODELS (1段目：WOMAN / 2段目：MAN) -->
     <section id="models" class="py-20 max-w-[1400px] mx-auto px-4 border-t border-white/5">
         <div class="text-center mb-16">
             <h2 class="font-serif text-2xl tracking-[0.3em] text-[#d7be53] uppercase">MODELS</h2>
             <p class="text-[10px] tracking-widest text-gray-500 mt-2 uppercase">Selected Casts</p>
         </div>
 
-        <div id="model-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"></div>
+        <!-- 1段目: WOMAN (スクロールID: models-woman) -->
+        <div id="models-woman" class="scroll-mt-28 mb-12">
+            <div id="woman-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"></div>
+        </div>
+
+        <!-- 2段目: MAN (スクロールID: models-man) -->
+        <div id="models-man" class="scroll-mt-28">
+            <div id="man-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"></div>
+        </div>
     </section>
 
     <!-- SECTION 2: NEWS -->
@@ -344,40 +352,45 @@
         });
     });
 
-    // モデルデータ
-    const modelsData = [
-    /* 1段目（左から）：TAKAKO / Yumika / Alina / Fadie */
-    { name: "TAKAKO", size: "171 / 82 / 64 / 89", img: "./assets/models_image/takako/photo_1.webp", link: "./models/takako.html" },
-    { name: "Yumika", size: "170 / 79 / 67 / 85", img: "./assets/models_image/yumika/photo_1.webp", link: "./models/yumika.html" },
-    { name: "Alina", size: "164 / 82 / 60 / 86", img: "./assets/models_image/alina/photo_1.webp", link: "./models/alina.html" },
-    { name: "Fadie", size: "160 / 82 / 62 / 90", img: "./assets/models_image/fadile/photo_1.webp", link: "./models/fadile.html" },
+    // 1段目モデルデータ (WOMAN)
+    const womanModels = [
+        { name: "TAKAKO", size: "171 / 82 / 64 / 89", img: "./assets/models_image/takako/photo_1.webp", link: "./models/takako.html" },
+        { name: "Yumika", size: "170 / 79 / 67 / 85", img: "./assets/models_image/yumika/photo_1.webp", link: "./models/yumika.html" },
+        { name: "Alina", size: "164 / 82 / 60 / 86", img: "./assets/models_image/alina/photo_1.webp", link: "./models/alina.html" },
+        { name: "Fadie", size: "160 / 82 / 62 / 90", img: "./assets/models_image/fadile/photo_1.webp", link: "./models/fadile.html" },
+    ];
 
-    /* 2段目（左から）：Bhuiyan / Alex / KOU */
-    { name: "Bhuiyan", size: "178 / 85 / 62 / 90", img: "./assets/models_image/bhuiyan/photo.webp", link: "./models/bhuiyan.html" },
-    { name: "Alex", size: "182 / 88 / 74 / 92", img: "./assets/models_image/alex/photo.webp", link: "./models/alex.html" },
-    { name: "KOU", size: "185 / 90 / 76 / 94", img: "./assets/models_image/kou/photo.webp", link: "./models/kou.html" },
-];
+    // 2段目モデルデータ (MAN)
+    const manModels = [
+        { name: "Bhuiyan", size: "178 / 85 / 62 / 90", img: "./assets/models_image/bhuiyan/photo.webp", link: "./models/bhuiyan.html" },
+        { name: "Alex", size: "182 / 88 / 74 / 92", img: "./assets/models_image/alex/photo.webp", link: "./models/alex.html" },
+        { name: "KOU", size: "185 / 90 / 76 / 94", img: "./assets/models_image/kou/photo.webp", link: "./models/kou.html" },
+    ];
 
-    const modelGrid = document.getElementById('model-grid');
-    
-    // モデルカード動的生成
-    modelsData.forEach(model => {
-        const card = document.createElement('div');
-        card.className = "fade-in-up transition-all duration-300 group cursor-pointer text-center";
-        
-        card.innerHTML = `
-            <a href="${model.link}" class="block">
-                <div class="flash-hover aspect-[2/3] w-full bg-[#2A1A14] overflow-hidden relative mb-4 rounded-sm">
-                    <img src="${model.img}" alt="${model.name}" class="w-full h-full object-cover opacity-90 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-100">
-                </div>
-                <div class="pb-2">
-                    <h4 class="font-serif text-sm tracking-[0.2em] text-[#EAE6E1] font-medium uppercase transition-colors group-hover:text-[#d7be53]">${model.name}</h4>
-                    <p class="text-[9px] text-gray-500 tracking-[0.15em] mt-1.5 font-light">${model.size}</p>
-                </div>
-            </a>
-        `;
-        modelGrid.appendChild(card);
-    });
+    // カード生成関数
+    function renderModelCards(dataList, containerId) {
+        const container = document.getElementById(containerId);
+        dataList.forEach(model => {
+            const card = document.createElement('div');
+            card.className = "fade-in-up transition-all duration-300 group cursor-pointer text-center";
+            card.innerHTML = `
+                <a href="${model.link}" class="block">
+                    <div class="flash-hover aspect-[2/3] w-full bg-[#2A1A14] overflow-hidden relative mb-4 rounded-sm">
+                        <img src="${model.img}" alt="${model.name}" class="w-full h-full object-cover opacity-90 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-100">
+                    </div>
+                    <div class="pb-2">
+                        <h4 class="font-serif text-sm tracking-[0.2em] text-[#EAE6E1] font-medium uppercase transition-colors group-hover:text-[#d7be53]">${model.name}</h4>
+                        <p class="text-[9px] text-gray-500 tracking-[0.15em] mt-1.5 font-light">${model.size}</p>
+                    </div>
+                </a>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    // 各グリッドへの描画実行
+    renderModelCards(womanModels, 'woman-grid');
+    renderModelCards(manModels, 'man-grid');
 
     // スクロールアニメーション
     const observerOptions = { root: null, rootMargin: '0px 0px -10% 0px', threshold: 0.1 };
