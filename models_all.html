@@ -157,6 +157,7 @@
             <button onclick="filterModels('woman')" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">WOMAN</button>
             <button onclick="filterModels('man')" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">MAN</button>
             <button onclick="filterModels('artist')" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ARTIST</button>
+            <button onclick="filterModels('direct_booking')" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">DIRECT BOOKING</button>
         </div>
 
         <!-- ALL MODELS GRID (PC: 4列配置) -->
@@ -250,7 +251,10 @@
         { category: "man", name: "KOU", size: "185 / 90 / 76 / 94", img: "./assets/models_image/kou/photo.webp", link: "./models/kou.html" },
         
         /* ARTIST (追加例) */
-        /* { category: "artist", name: "Artist Name", size: "Stylist / Photographer", img: "./assets/artist/photo_1.webp", link: "./artist/name.html" } */
+        /* { category: "artist", name: "Artist Name", size: "Stylist / Photographer", img: "./assets/artist/photo_1.webp", link: "./artist/name.html" }, */
+
+        /* DIRECT BOOKING (追加例) */
+        /* { category: "direct_booking", name: "Direct Model", size: "172 / 83 / 61 / 88", img: "./assets/models_image/direct/photo_1.webp", link: "./models/direct.html" } */
     ];
 
     const grid = document.getElementById('all-models-grid');
@@ -295,7 +299,9 @@
     // フィルタータブ切り替え
     function filterModels(category) {
         document.querySelectorAll('.filter-tab').forEach(btn => btn.classList.remove('active'));
-        event.target.classList.add('active');
+        if (event && event.target) {
+            event.target.classList.add('active');
+        }
         renderCasts(category);
     }
 
