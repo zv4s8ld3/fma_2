@@ -72,7 +72,7 @@
         .fade-in-up {
             opacity: 0;
             transform: translateY(8px);
-            transition: opacity 1.8s cubic-bezier(0.19, 1, 0.22, 1), transform 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+            transition: opacity 1.2s cubic-bezier(0.19, 1, 0.22, 1), transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
             will-change: opacity, transform;
         }
         .fade-in-up.is-visible {
@@ -97,7 +97,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4 md:h-24 relative">
                 
-                <!-- 左上ロゴ配置（Fairy Models: SemiBold / Agency: Light） -->
+                <!-- 左上ロゴ配置 -->
                 <div class="cursor-pointer flex items-center space-x-3" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
                     <img src="https://raw.githubusercontent.com/zv4s8ld3/fma_2/main/assets/fma_mark.svg" alt="Fairy Models Agency Mark" class="h-8 sm:h-9 md:h-10 w-auto object-contain">
                     <span class="font-serif text-base sm:text-lg md:text-xl text-[#d7be53] tracking-[0.15em] whitespace-nowrap">
@@ -116,7 +116,6 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </a>
-                        <!-- プルダウンメニュー（WOMAN: 1段目 / MAN: 2段目 / ALL: 全体へ移動） -->
                         <div class="absolute left-0 top-full hidden group-hover:block w-36 bg-[#110A07]/95 border border-white/10 backdrop-blur-md rounded shadow-xl py-2 transition-all">
                             <a href="#models-woman" class="block px-4 py-2 text-[11px] text-[#d7be53] hover:text-[#DDCB82] hover:bg-white/5 transition-colors">WOMAN</a>
                             <a href="#models-man" class="block px-4 py-2 text-[11px] text-[#d7be53] hover:text-[#DDCB82] hover:bg-white/5 transition-colors">MAN</a>
@@ -144,7 +143,7 @@
             </div>
         </div>
 
-        <!-- スマホ用スライドメニュー (md未満) -->
+        <!-- スマホ用スライドメニュー -->
         <div id="mobileMenu" class="hidden md:hidden bg-[#110A07]/95 backdrop-blur-md border-b border-white/10 px-6 py-6 transition-all duration-300">
             <nav class="flex flex-col space-y-4 text-center text-xs tracking-[0.2em] text-[#d7be53]">
                 <div class="border-b border-white/5 pb-3">
@@ -166,7 +165,7 @@
         </div>
     </header>
 
-    <!-- SECTION 0: HERO (中央テキスト：Fairy Models [SemiBold] Agency [Light]) -->
+    <!-- SECTION 0: HERO -->
     <section class="relative h-screen w-full overflow-hidden flex items-center justify-center bg-[#1C110C]">
         <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0 opacity-60">
             <source src="./fma_hero.mp4" type="video/mp4">
@@ -180,19 +179,19 @@
         </div>
     </section>
 
-    <!-- SECTION 1: MODELS (1段目：WOMAN / 2段目：MAN) -->
+    <!-- SECTION 1: MODELS -->
     <section id="models" class="py-20 max-w-[1400px] mx-auto px-4 border-t border-white/5">
         <div class="text-center mb-16">
             <h2 class="font-serif text-2xl tracking-[0.3em] text-[#d7be53] uppercase">MODELS</h2>
             <p class="text-[10px] tracking-widest text-gray-500 mt-2 uppercase">Selected Casts</p>
         </div>
 
-        <!-- 1段目: WOMAN (スクロールID: models-woman) -->
+        <!-- 1段目: WOMAN -->
         <div id="models-woman" class="scroll-mt-28 mb-12">
             <div id="woman-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"></div>
         </div>
 
-        <!-- 2段目: MAN (スクロールID: models-man) -->
+        <!-- 2段目: MAN -->
         <div id="models-man" class="scroll-mt-28">
             <div id="man-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"></div>
         </div>
@@ -209,8 +208,6 @@
                 </div>
 
                 <div class="lg:col-span-2 divide-y divide-white/5 font-light">
-                    
-                    <!-- 1段目（最新）：KOU -->
                     <a href="./news/notice_20261028_04_kou.html" class="block py-5 group">
                         <article class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
                             <time datetime="2026-10-28" class="font-serif text-xs text-[#DDCB82]/60 tracking-widest w-24">2026.10.28</time>
@@ -221,7 +218,6 @@
                         </article>
                     </a>
 
-                    <!-- 2段目：ALEX -->
                     <a href="./news/notice_20261028_03_alex.html" class="block py-5 group">
                         <article class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
                             <time datetime="2026-10-28" class="font-serif text-xs text-[#DDCB82]/60 tracking-widest w-24">2026.10.28</time>
@@ -232,7 +228,6 @@
                         </article>
                     </a>
 
-                    <!-- 3段目：BHUIYAN -->
                     <a href="./news/notice_20261028_02_bhuiyan.html" class="block py-5 group">
                         <article class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
                             <time datetime="2026-10-28" class="font-serif text-xs text-[#DDCB82]/60 tracking-widest w-24">2026.10.28</time>
@@ -243,7 +238,6 @@
                         </article>
                     </a>
 
-                    <!-- 4段目：TAKAKO -->
                     <a href="./news/notice_20261028_01_takako.html" class="block py-5 group">
                         <article class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
                             <time datetime="2026-10-28" class="font-serif text-xs text-[#DDCB82]/60 tracking-widest w-24">2026.10.28</time>
@@ -254,7 +248,6 @@
                         </article>
                     </a>
 
-                    <!-- 5段目：サイト開設案内 -->
                     <a href="./news/notice_20260915_01.html" class="block py-5 group">
                         <article class="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8">
                             <time datetime="2026-09-15" class="font-serif text-xs text-[#DDCB82]/60 tracking-widest w-24">2026.09.15</time>
@@ -275,7 +268,7 @@
         </div>
     </section>
 
-    <!-- SECTION 3: CONTACT & アクセスマップ & 応募フォーム -->
+    <!-- SECTION 3: CONTACT -->
     <section id="contact" class="py-24 bg-[#2A1A14] border-t border-white/5 text-[#DDCB82]">
         <div class="max-w-6xl mx-auto px-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
@@ -304,3 +297,134 @@
                             <span class="block text-xs tracking-[0.2em] font-bold uppercase">Entry Form</span>
                         </a>
                     </div>
+                </div>
+            </div>
+
+            <!-- アクセスマップ -->
+            <div class="pt-8 border-t border-white/10">
+                <h3 class="font-serif text-lg text-[#d7be53] mb-4 tracking-[0.15em] uppercase">LOCATION ACCESS</h3>
+                <div class="w-full h-72 sm:h-80 rounded overflow-hidden shadow-2xl border border-white/10">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.7479754723737!2d139.70133657677112!3d35.65858047259469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b563b00109f%3A0x693a00215707027!2z44CS150LMDExMiDmnbHkuq3pg73muIli4Yy66L6C5aC0MS0yMwtC0pQ!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; filter: grayscale(80%) invert(90%) contrast(120%);" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#110A07] py-12 text-center border-t border-white/5 space-y-4">
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-xs tracking-[0.15em]">
+            <a href="./company.html" class="text-[#DDCB82]/60 hover:text-[#d7be53] transition-colors">COMPANY / LEGAL</a>
+            <a href="./privacy.html" class="text-[#DDCB82]/60 hover:text-[#d7be53] transition-colors">PRIVACY POLICY</a>
+            <a href="./terms.html" class="text-[#DDCB82]/60 hover:text-[#d7be53] transition-colors">TERMS OF USE</a>
+            <a href="./cookie.html" class="text-[#d7be53] transition-colors">COOKIE POLICY</a>
+        </div>
+        <p class="text-[#d7be53]/40 text-[11px] tracking-widest font-serif">&copy; 2026 Shop Kloset Inc. / <span class="font-semibold">Fairy Models</span> <span class="font-light">Agency</span>. All Rights Reserved.</p>
+    </footer>
+
+    <!-- PAGE TOP BUTTON -->
+    <button id="scrollTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
+            class="fixed bottom-8 right-8 z-50 w-11 h-11 bg-[#110A07]/80 backdrop-blur-md border border-[#d7be53]/30 text-[#DDCB82] rounded-full flex items-center justify-center opacity-0 invisible transition-all duration-300 hover:border-[#d7be53] hover:text-[#d7be53] group shadow-lg">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 transform group-hover:-translate-y-0.5 transition-transform">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+        </svg>
+    </button>
+
+    <!-- SCRIPTS -->
+    <script>
+    // 右クリック・ドラッグ防止
+    document.addEventListener('contextmenu', (e) => { e.preventDefault(); });
+    document.addEventListener('dragstart', (e) => { if (e.target.tagName === 'IMG') { e.preventDefault(); } });
+
+    // モバイルメニュー制御
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const iconMenu = document.getElementById('iconMenu');
+    const iconClose = document.getElementById('iconClose');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    function toggleMenu() {
+        mobileMenu.classList.toggle('hidden');
+        iconMenu.classList.toggle('hidden');
+        iconClose.classList.toggle('hidden');
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (!mobileMenu.classList.contains('hidden')) { toggleMenu(); }
+        });
+    });
+
+    // 1段目モデルデータ (WOMAN)
+    const womanModels = [
+        { name: "TAKAKO", size: "171 / 82 / 64 / 89", img: "./assets/models_image/takako/photo_1.webp", link: "./models/takako.html" },
+        { name: "Yumika", size: "170 / 79 / 67 / 85", img: "./assets/models_image/yumika/photo_1.webp", link: "./models/yumika.html" },
+        { name: "Alina", size: "164 / 82 / 60 / 86", img: "./assets/models_image/alina/photo_1.webp", link: "./models/alina.html" },
+        { name: "Fadie", size: "160 / 82 / 62 / 90", img: "./assets/models_image/fadile/photo_1.webp", link: "./models/fadile.html" },
+    ];
+
+    // 2段目モデルデータ (MAN)
+    const manModels = [
+        { name: "Bhuiyan", size: "180 / 90 / 73 / 88", img: "./assets/models_image/bhuiyan/photo_1.webp", link: "./models/bhuiyan.html" },
+        { name: "Alex", size: "180 / 96 / 98 / 95", img: "./assets/models_image/alex/photo_1.webp", link: "./models/alex.html" },
+        { name: "KOU", size: "181 / 101.5 / 78 / 101", img: "./assets/models_image/kou/photo_1.webp", link: "./models/kou.html" },
+    ];
+
+    // カード生成関数
+    function renderModelCards(dataList, containerId) {
+        const container = document.getElementById(containerId);
+        dataList.forEach(model => {
+            const card = document.createElement('div');
+            card.className = "fade-in-up transition-all duration-300 group cursor-pointer text-center";
+            card.innerHTML = `
+                <a href="${model.link}" class="block">
+                    <div class="flash-hover aspect-[2/3] w-full bg-[#2A1A14] overflow-hidden relative mb-4 rounded-sm">
+                        <img src="${model.img}" alt="${model.name}" class="w-full h-full object-cover opacity-90 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-100">
+                    </div>
+                    <div class="pb-2">
+                        <h4 class="font-serif text-sm tracking-[0.2em] text-[#EAE6E1] font-medium uppercase transition-colors group-hover:text-[#d7be53]">${model.name}</h4>
+                        <p class="text-[9px] text-gray-500 tracking-[0.15em] mt-1.5 font-light">${model.size}</p>
+                    </div>
+                </a>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    // 各グリッドへの描画実行
+    renderModelCards(womanModels, 'woman-grid');
+    renderModelCards(manModels, 'man-grid');
+
+    // ★画像表示トラブル防止：生成された要素を即座に表示させる安全処理★
+    document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(() => {
+            document.querySelectorAll('.fade-in-up').forEach((card, index) => {
+                setTimeout(() => {
+                    card.classList.add('is-visible');
+                }, index * 80);
+            });
+        }, 50);
+    });
+
+    // Topへ戻るボタン
+    window.addEventListener('scroll', () => {
+        const btn = document.getElementById('scrollTopBtn');
+        if (window.scrollY > 300) {
+            btn.classList.remove('opacity-0', 'invisible');
+            btn.classList.add('opacity-100', 'visible');
+        } else {
+            btn.classList.remove('opacity-100', 'visible');
+            btn.classList.add('opacity-0', 'invisible');
+        }
+    });
+</script>
+</body>
+</html>
