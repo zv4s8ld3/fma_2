@@ -13,6 +13,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description" content="Fairy Models Agencyの最新ニュース・トピックス。">
 
+    <!-- Favicons -->
+    <link rel="icon" href="./favicon.ico" sizes="any">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+
     <!-- Fonts & Tailwind -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,31 +61,81 @@
 </head>
 <body class="bg-[#1C110C] text-[#EAE6E1] font-sans antialiased selection:bg-[#d7be53] selection:text-white overflow-x-hidden min-h-screen flex flex-col justify-between">
 
-    <!-- HEADER: マーク＋テキストヘッダー（Fairy Models Agency） -->
+    <!-- HEADER (index.html規格に統一) -->
     <header class="w-full bg-[#1C110C]/90 backdrop-blur-md border-b border-white/5 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-center py-4 md:h-24 gap-4">
-                <div class="cursor-pointer flex items-center space-x-3" onclick="location.href='./index.html';">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4 md:h-24 relative">
+                
+                <!-- ロゴ -->
+                <a href="./index.html" class="flex items-center space-x-3 no-underline">
                     <img src="https://raw.githubusercontent.com/zv4s8ld3/fma_2/main/assets/fma_mark.svg" alt="Fairy Models Agency Mark" class="h-8 sm:h-9 md:h-10 w-auto object-contain">
                     <span class="font-serif text-base sm:text-lg md:text-xl text-[#d7be53] tracking-[0.15em] whitespace-nowrap">
                         <span class="font-semibold">Fairy Models</span> <span class="font-light">Agency</span>
                     </span>
-                </div>
+                </a>
 
-                <nav class="flex space-x-6 sm:space-x-10 text-xs tracking-[0.2em] font-medium text-[#d7be53]">
-                    <a href="./models_all.html" class="hover:text-[#DDCB82] transition-colors uppercase">MODELS</a>
+                <!-- PC用ナビゲーション -->
+                <nav class="hidden md:flex items-center space-x-6 lg:space-x-8 text-xs tracking-[0.2em] font-medium text-[#d7be53]">
+                    
+                    <!-- MODELS (プルダウンメニュー) -->
+                    <div class="relative group py-2">
+                        <a href="./index.html#models" class="hover:text-[#DDCB82] transition-colors inline-flex items-center gap-1 uppercase">
+                            MODELS
+                            <svg class="w-3 h-3 text-[#d7be53] group-hover:text-[#DDCB82] transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <div class="absolute left-0 top-full hidden group-hover:block w-36 bg-[#110A07]/95 border border-white/10 backdrop-blur-md rounded shadow-xl py-2 transition-all">
+                            <a href="./index.html#models-woman" class="block px-4 py-2 text-[11px] text-[#d7be53] hover:text-[#DDCB82] hover:bg-white/5 transition-colors">WOMAN</a>
+                            <a href="./index.html#models-man" class="block px-4 py-2 text-[11px] text-[#d7be53] hover:text-[#DDCB82] hover:bg-white/5 transition-colors">MAN</a>
+                            <a href="./models_all.html" class="block px-4 py-2 text-[11px] text-[#DDCB82] hover:bg-white/5 transition-colors font-semibold">ALL</a>
+                        </div>
+                    </div>
+
                     <a href="./artist.html" class="hover:text-[#DDCB82] transition-colors uppercase">ARTIST</a>
                     <a href="./direct_booking.html" class="hover:text-[#DDCB82] transition-colors uppercase">DIRECT BOOKING</a>
                     <a href="./news.html" class="text-[#DDCB82] font-semibold transition-colors uppercase">NEWS</a>
                     <a href="./index.html#contact" class="hover:text-[#DDCB82] transition-colors uppercase">CONTACT</a>
-                    <a href="./entry.html" class="hover:text-[#1C110C] hover:bg-[#d7be53] border border-[#d7be53] text-[#d7be53] px-3 py-1 rounded transition-all uppercase">応募フォーム</a>
+                    <a href="./fma_model_entry.html" class="hover:text-[#1C110C] hover:bg-[#d7be53] border border-[#d7be53] text-[#d7be53] px-3 py-1.5 rounded transition-all uppercase">応募フォーム</a>
                 </nav>
+
+                <!-- スマホ用ハンバーガーボタン -->
+                <button id="menuBtn" class="block md:hidden text-[#d7be53] focus:outline-none p-2 relative z-50" aria-label="Menu">
+                    <svg id="iconMenu" class="w-6 h-6 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <svg id="iconClose" class="w-6 h-6 hidden transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+
             </div>
+        </div>
+
+        <!-- スマホ用スライドメニュー -->
+        <div id="mobileMenu" class="hidden md:hidden bg-[#110A07]/95 backdrop-blur-md border-b border-white/10 px-6 py-6 transition-all duration-300">
+            <nav class="flex flex-col space-y-4 text-center text-xs tracking-[0.2em] text-[#d7be53]">
+                <div class="border-b border-white/5 pb-3">
+                    <span class="text-xs text-[#d7be53] font-semibold block mb-2">MODELS</span>
+                    <div class="flex justify-center space-x-4 text-[11px] text-[#d7be53]">
+                        <a href="./index.html#models-woman" class="mobile-link hover:text-[#DDCB82]">WOMAN</a>
+                        <span>/</span>
+                        <a href="./index.html#models-man" class="mobile-link hover:text-[#DDCB82]">MAN</a>
+                        <span>/</span>
+                        <a href="./models_all.html" class="mobile-link text-[#DDCB82] font-semibold">ALL</a>
+                    </div>
+                </div>
+                <a href="./artist.html" class="mobile-link text-[#d7be53] hover:text-[#DDCB82] py-1 border-b border-white/5 transition-colors">ARTIST</a>
+                <a href="./direct_booking.html" class="mobile-link text-[#d7be53] hover:text-[#DDCB82] py-1 border-b border-white/5 transition-colors">DIRECT BOOKING</a>
+                <a href="./news.html" class="mobile-link text-[#DDCB82] font-semibold py-1 border-b border-white/5 transition-colors">NEWS</a>
+                <a href="./index.html#contact" class="mobile-link text-[#d7be53] hover:text-[#DDCB82] py-1 border-b border-white/5 transition-colors">CONTACT</a>
+                <a href="./fma_model_entry.html" class="mobile-link text-[#d7be53] font-bold py-2 border border-[#d7be53] rounded transition-colors">応募フォーム</a>
+            </nav>
         </div>
     </header>
 
     <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 w-full flex-grow">
-    
+        
         <div class="text-center mb-16">
             <h1 class="font-serif text-3xl tracking-[0.2em] text-[#d7be53] uppercase font-light">NEWS</h1>
             <p class="text-[10px] tracking-widest text-gray-400 mt-3 uppercase">最新情報 / お知らせ</p>
@@ -87,6 +143,54 @@
         </div>
 
         <div class="divide-y divide-white/5 font-light border-t border-b border-white/5">
+            
+            <!-- 記事：KOU -->
+            <a href="./news/notice_20261028_04_kou.html" class="block py-6 flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 group transition-colors hover:bg-white/[0.02] px-4 -mx-4 rounded">
+                <time datetime="2026-10-28" class="font-serif text-xs text-[#DDCB82]/60 tracking-widest w-24">2026.10.28</time>
+                <div class="flex items-center gap-3 sm:w-24 flex-shrink-0">
+                    <span class="text-[9px] tracking-widest bg-white/5 text-gray-400 px-2.5 py-0.5 rounded border border-white/5 uppercase text-center w-full">Info</span>
+                </div>
+                <h2 class="text-sm text-gray-300 group-hover:text-[#d7be53] transition-colors tracking-wide flex-1 leading-relaxed">
+                    【新規登録】「KOU」が新たに参加しました!
+                </h2>
+                <span class="hidden sm:block text-gray-600 group-hover:text-[#d7be53] transition-colors text-xs">→</span>
+            </a>
+            
+            <!-- 記事：ALEX -->
+            <a href="./news/notice_20261028_03_alex.html" class="block py-6 flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 group transition-colors hover:bg-white/[0.02] px-4 -mx-4 rounded">
+                <time datetime="2026-10-28" class="font-serif text-xs text-[#DDCB82]/60 tracking-widest w-24">2026.10.28</time>
+                <div class="flex items-center gap-3 sm:w-24 flex-shrink-0">
+                    <span class="text-[9px] tracking-widest bg-white/5 text-gray-400 px-2.5 py-0.5 rounded border border-white/5 uppercase text-center w-full">Info</span>
+                </div>
+                <h2 class="text-sm text-gray-300 group-hover:text-[#d7be53] transition-colors tracking-wide flex-1 leading-relaxed">
+                    【新規登録】「ALEX」が新たに参加しました!
+                </h2>
+                <span class="hidden sm:block text-gray-600 group-hover:text-[#d7be53] transition-colors text-xs">→</span>
+            </a>
+            
+            <!-- 記事：BHUIYAN -->
+            <a href="./news/notice_20261028_02_bhuiyan.html" class="block py-6 flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 group transition-colors hover:bg-white/[0.02] px-4 -mx-4 rounded">
+                <time datetime="2026-10-28" class="font-serif text-xs text-[#DDCB82]/60 tracking-widest w-24">2026.10.28</time>
+                <div class="flex items-center gap-3 sm:w-24 flex-shrink-0">
+                    <span class="text-[9px] tracking-widest bg-white/5 text-gray-400 px-2.5 py-0.5 rounded border border-white/5 uppercase text-center w-full">Info</span>
+                </div>
+                <h2 class="text-sm text-gray-300 group-hover:text-[#d7be53] transition-colors tracking-wide flex-1 leading-relaxed">
+                    【新規登録】「BHUIYAN（ブイヤン）」が新たに参加しました!
+                </h2>
+                <span class="hidden sm:block text-gray-600 group-hover:text-[#d7be53] transition-colors text-xs">→</span>
+            </a>
+            
+            <!-- 記事：TAKAKO -->
+            <a href="./news/notice_20261028_01_takako.html" class="block py-6 flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 group transition-colors hover:bg-white/[0.02] px-4 -mx-4 rounded">
+                <time datetime="2026-10-28" class="font-serif text-xs text-[#DDCB82]/60 tracking-widest w-24">2026.10.28</time>
+                <div class="flex items-center gap-3 sm:w-24 flex-shrink-0">
+                    <span class="text-[9px] tracking-widest bg-white/5 text-gray-400 px-2.5 py-0.5 rounded border border-white/5 uppercase text-center w-full">Info</span>
+                </div>
+                <h2 class="text-sm text-gray-300 group-hover:text-[#d7be53] transition-colors tracking-wide flex-1 leading-relaxed">
+                    【新規登録】「TAKAKO（タカコ）」が新たに参加しました!
+                </h2>
+                <span class="hidden sm:block text-gray-600 group-hover:text-[#d7be53] transition-colors text-xs">→</span>
+            </a>
 
             <!-- 記事：YUMIKA -->
             <a href="./news/notice_20261023_01_yumika.html" class="block py-6 flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 group transition-colors hover:bg-white/[0.02] px-4 -mx-4 rounded">
@@ -125,7 +229,7 @@
             </a>
 
             <!-- 最古の記事：Webサイト開設案内 -->
-            <a href="./news/notice_20260915.html" class="block py-6 flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 group transition-colors hover:bg-white/[0.02] px-4 -mx-4 rounded">
+            <a href="./news/notice_20260915_01.html" class="block py-6 flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-8 group transition-colors hover:bg-white/[0.02] px-4 -mx-4 rounded">
                 <time datetime="2026-09-15" class="font-serif text-xs text-[#DDCB82]/60 tracking-widest w-24">2026.09.15</time>
                 <div class="flex items-center gap-3 sm:w-24 flex-shrink-0">
                     <span class="text-[9px] tracking-widest bg-white/5 text-gray-400 px-2.5 py-0.5 rounded border border-white/5 uppercase text-center w-full">Info</span>
@@ -147,7 +251,7 @@
 
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (index.html規格) -->
     <footer class="bg-[#110A07] py-12 text-center border-t border-white/5 space-y-4">
         <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-xs tracking-[0.15em]">
             <a href="./company.html" class="text-[#DDCB82]/60 hover:text-[#d7be53] transition-colors">COMPANY / LEGAL</a>
@@ -166,22 +270,42 @@
         </svg>
     </button>
 
+    <!-- SCRIPTS -->
     <script>
-        // 右クリック・ドラッグ防止
-        document.addEventListener('contextmenu', (e) => { e.preventDefault(); });
-        document.addEventListener('dragstart', (e) => { if (e.target.tagName === 'IMG') { e.preventDefault(); } });
+    // 右クリック・ドラッグ防止
+    document.addEventListener('contextmenu', (e) => { e.preventDefault(); });
+    document.addEventListener('dragstart', (e) => { if (e.target.tagName === 'IMG') { e.preventDefault(); } });
 
-        // TOPへ戻るボタン制御
-        window.addEventListener('scroll', () => {
-            const btn = document.getElementById('scrollTopBtn');
-            if (window.scrollY > 300) { 
-                btn.classList.remove('opacity-0', 'invisible');
-                btn.classList.add('opacity-100', 'visible');
-            } else {
-                btn.classList.remove('opacity-100', 'visible');
-                btn.classList.add('opacity-0', 'invisible');
-            }
+    // モバイルメニュー制御
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const iconMenu = document.getElementById('iconMenu');
+    const iconClose = document.getElementById('iconClose');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    function toggleMenu() {
+        mobileMenu.classList.toggle('hidden');
+        iconMenu.classList.toggle('hidden');
+        iconClose.classList.toggle('hidden');
+    }
+    menuBtn.addEventListener('click', toggleMenu);
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (!mobileMenu.classList.contains('hidden')) { toggleMenu(); }
         });
-    </script>
+    });
+
+    // TOPへ戻るボタン制御
+    window.addEventListener('scroll', () => {
+        const btn = document.getElementById('scrollTopBtn');
+        if (window.scrollY > 300) { 
+            btn.classList.remove('opacity-0', 'invisible');
+            btn.classList.add('opacity-100', 'visible');
+        } else {
+            btn.classList.remove('opacity-100', 'visible');
+            btn.classList.add('opacity-0', 'invisible');
+        }
+    });
+</script>
 </body>
 </html>
