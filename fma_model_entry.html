@@ -8,13 +8,13 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>モデル応募フォーム | Fairy Models Agency</title>
 
-<!-- OGP設定 -->
+<!-- OGP設定（index.htmlと統一） -->
 <meta property="og:title" content="モデル応募フォーム | Fairy Models Agency">
 <meta property="og:description" content="Fairy Models Agencyのモデル応募フォーム。応募資格をご確認のうえ、プロフィールと写真をお送りください。">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 
-<!-- Favicons (index.htmlと統一) -->
+<!-- Favicons（index.htmlと統一） -->
 <link rel="icon" href="./favicon.ico" sizes="any">
 <link rel="icon" href="./favicon.svg" type="image/svg+xml">
 <link rel="icon" href="./favicon-32x32.png" type="image/png">
@@ -34,7 +34,7 @@ body {
 }
 .narrow { width: min(960px, 100% - 28px); margin-inline: auto; }
 
-/* ヘッダー・フッター */
+/* ヘッダー・フッター（index.html仕様） */
 header { display: flex; justify-content: center; padding: clamp(30px, 5vw, 48px) 16px 0; }
 footer { padding: 32px 20px; border-top: 1px solid var(--line); background: #050505; text-align: center; font-size: .85rem; line-height: 1.9; color: #aaa; }
 footer .brand { justify-content: center; margin-bottom: 12px; }
@@ -120,7 +120,7 @@ button { font: inherit; font-size: 1.05rem; font-weight: 800; color: #111; curso
 </head>
 <body>
 
-<!-- HEADER: index.html へのリンク化 -->
+<!-- HEADER: index.htmlと統一（TOPページへのリンク） -->
 <header>
   <a href="index.html" class="brand" aria-label="Fairy Models Agency トップページへ">
     <img src="https://raw.githubusercontent.com/zv4s8ld3/fma_2/main/assets/fma_mark.svg" alt="Fairy Models Agency Mark">
@@ -205,6 +205,7 @@ button { font: inherit; font-size: 1.05rem; font-weight: 800; color: #111; curso
   </div>
 </main>
 
+<!-- FOOTER: index.htmlと統一 -->
 <footer>
   <div class="brand" onclick="scrollTo({top:0,behavior:'smooth'})">
     <img src="https://raw.githubusercontent.com/zv4s8ld3/fma_2/main/assets/fma_mark.svg" alt="Fairy Models Agency Mark">
