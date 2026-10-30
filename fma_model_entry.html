@@ -335,7 +335,7 @@ function send(payload) {
       done(r);
     };
     const timer = setTimeout(() => done(null, ERR), TIMEOUT);
-    addEventHandler ? addEventListener('message', onMsg) : addEventListener('message', onMsg);
+    addEventListener('message', onMsg);
     document.body.append(frame, f);
     try { HTMLFormElement.prototype.submit.call(f); } catch { done(null, new Error('送信を開始できませんでした。ページを開き直して、再度お試しください。')); }
   });
@@ -366,7 +366,16 @@ form.addEventListener('submit', async e => {
     form.reset(); snsRows.forEach(syncSns);
     document.querySelectorAll('.upload img[src]').forEach(clearPreview);
     try { sessionStorage.removeItem('fma-pending'); } catch {}
+
+    // 送信完了メッセージの表示
     show(`ご応募ありがとうございます。応募を受け付けました。${r.applicationId ? '\n受付番号：' + r.applicationId : ''}\n書類選考を通過された方に、次回選考をご案内いたします。`, true);
+
+    // メッセージ枠内に「トップページへ戻る」ボタンを自動生成
+    const backBtn = document.createElement('div');
+    backBtn.style.marginTop = '20px';
+    backBtn.innerHTML = '<a href="index.html" style="display:inline-block; padding:12px 28px; background:linear-gradient(135deg, var(--gold-light), var(--gold)); color:#111; font-weight:bold; text-decoration:none; letter-spacing:0.05em;">トップページへ戻る</a>';
+    msg.appendChild(backBtn);
+
   } catch (err) {
     show(err.message || '送信に失敗しました。通信環境をご確認のうえ、再度お試しください。');
   } finally {
