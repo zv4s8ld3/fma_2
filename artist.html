@@ -191,7 +191,7 @@
             <button onclick="filterModels('direct_booking')" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">DIRECT BOOKING</button>
         </div>
 
-        <!-- ALL MODELS GRID (models_all.html と完全同一の4列配置規格) -->
+        <!-- ALL MODELS GRID -->
         <div id="all-models-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"></div>
 
     </main>
@@ -274,7 +274,7 @@
         });
     });
 
-    // 全キャストデータリスト（ARTISTカテゴリに齊藤英里さん・Vivianさんを掲載）
+    // 全キャストデータリスト
     const allCastsData = [
         /* WOMAN */
         { category: "woman", name: "ANGELA", size: "172 / 85 / 69 / 95", img: "./assets/models_all_image/0_angela/photo_1.webp", link: "./models/angela.html" },
@@ -290,8 +290,8 @@
         
         /* ARTIST */
         { category: "artist", name: "齊藤 英里", size: "160 / 76 / 58 / 81", img: "./assets/artists_image/eri_saito/photo_1.webp", link: "./artists/eri_saito.html" },
-        { category: "artist", name: "VIVIAN", size: "173 / 94 / 74 / 95", img: "./assets/artists_image/vivian/photo_1.webp", link: "./artists/vivian.html" }
-        { category: "artist", name: "KEIKO", size: "180 / 81 / 66 / 91", img: "./assets/artists_image/keiko/photo_1.webp", link: "./artists/keiko.html" }
+        { category: "artist", name: "VIVIAN", size: "173 / 94 / 74 / 95", img: "./assets/artists_image/vivian/photo_1.webp", link: "./artists/vivian.html" },
+        { category: "artist", name: "KEIKO", size: "180 / 81 / 66 / 91", img: "./assets/artists_image/keiko/photo_1.jpg", link: "./artists/keiko.html" }
     ];
 
     const grid = document.getElementById('all-models-grid');
@@ -338,8 +338,8 @@
         document.querySelectorAll('.filter-tab').forEach(btn => btn.classList.remove('active'));
         if (btnElement) {
             btnElement.classList.add('active');
-        } else if (event && event.target) {
-            event.target.classList.add('active');
+        } else if (window.event && window.event.target) {
+            window.event.target.classList.add('active');
         }
         renderCasts(category);
     }
