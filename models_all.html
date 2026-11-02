@@ -113,7 +113,7 @@
                     <a href="./direct_booking.html" class="hover:text-[#DDCB82] transition-colors uppercase">DIRECT BOOKING</a>
                     <a href="./index.html#news" class="hover:text-[#DDCB82] transition-colors uppercase">NEWS</a>
                     <a href="./index.html#contact" class="hover:text-[#DDCB82] transition-colors uppercase">CONTACT</a>
-                    <a href="./entry.html" class="hover:text-[#1C110C] hover:bg-[#d7be53] border border-[#d7be53] text-[#d7be53] px-3 py-1.5 rounded transition-all uppercase">応募フォーム</a>
+                    <a href="./fma_model_entry.html" class="hover:text-[#1C110C] hover:bg-[#d7be53] border border-[#d7be53] text-[#d7be53] px-3 py-1.5 rounded transition-all uppercase">応募フォーム</a>
                 </nav>
 
                 <!-- スマホ用ハンバーガーボタン -->
@@ -137,7 +137,7 @@
                 <a href="./direct_booking.html" class="mobile-link text-[#d7be53] hover:text-[#DDCB82] py-1 border-b border-white/5 transition-colors">DIRECT BOOKING</a>
                 <a href="./index.html#news" class="mobile-link text-[#d7be53] hover:text-[#DDCB82] py-1 border-b border-white/5 transition-colors">NEWS</a>
                 <a href="./index.html#contact" class="mobile-link text-[#d7be53] hover:text-[#DDCB82] py-1 border-b border-white/5 transition-colors">CONTACT</a>
-                <a href="./entry.html" class="mobile-link text-[#d7be53] font-bold py-2 border border-[#d7be53] rounded transition-colors">応募フォーム</a>
+                <a href="./fma_model_entry.html" class="mobile-link text-[#d7be53] font-bold py-2 border border-[#d7be53] rounded transition-colors">応募フォーム</a>
             </nav>
         </div>
     </header>
@@ -153,11 +153,11 @@
 
         <!-- CATEGORY FILTER TABS -->
         <div class="flex flex-wrap justify-center gap-3 mb-16 text-xs tracking-[0.2em]">
-            <button onclick="filterModels('all')" class="filter-tab active border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ALL</button>
-            <button onclick="filterModels('woman')" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">WOMAN</button>
-            <button onclick="filterModels('man')" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">MAN</button>
-            <button onclick="filterModels('artist')" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ARTIST</button>
-            <button onclick="filterModels('direct_booking')" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">DIRECT BOOKING</button>
+            <button onclick="filterModels('all', this)" class="filter-tab active border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ALL</button>
+            <button onclick="filterModels('woman', this)" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">WOMAN</button>
+            <button onclick="filterModels('man', this)" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">MAN</button>
+            <button onclick="filterModels('artist', this)" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ARTIST</button>
+            <button onclick="filterModels('direct_booking', this)" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">DIRECT BOOKING</button>
         </div>
 
         <!-- ALL MODELS GRID (PC: 4列配置) -->
@@ -176,7 +176,7 @@
                             <span class="font-semibold">Fairy Models</span> <span class="font-light">Agency</span>
                         </p>
                         <p class="text-gray-400">Operating by ShopKloset inc.</p>
-                        <p class="text-gray-400">MAIL: info@fairy-model.com</p>
+                        <p class="text-gray-400">MAIL: info@fairymodelsagency.com</p>
                     </div>
                 </div>
                 
@@ -189,7 +189,7 @@
                             <span class="block text-[10px] tracking-[0.15em] font-medium opacity-60 mb-0.5">お問い合わせ</span>
                             <span class="block text-xs tracking-[0.2em] font-bold uppercase">Contact Form</span>
                         </a>
-                        <a href="./entry.html" class="group block border border-[#d7be53] text-[#d7be53] hover:bg-[#d7be53] hover:text-[#1C110C] py-4 text-center rounded transition-all duration-300 shadow-lg">
+                        <a href="./fma_model_entry.html" class="group block border border-[#d7be53] text-[#d7be53] hover:bg-[#d7be53] hover:text-[#1C110C] py-4 text-center rounded transition-all duration-300 shadow-lg">
                             <span class="block text-[10px] tracking-[0.15em] font-medium opacity-80 mb-0.5">モデル応募</span>
                             <span class="block text-xs tracking-[0.2em] font-bold uppercase">Entry Form</span>
                         </a>
@@ -238,24 +238,24 @@
     menuBtn.addEventListener('click', toggleMenu);
 
     // 全キャストデータリスト（モデル＋アーティスト）
-const allCastsData = [
-    /* WOMAN */
-    { category: "woman", name: "ANGELA", size: "172 / 85 / 69 / 95", img: "./assets/models_all_image/0_angela/photo_1.webp", link: "./models/models_all/angela.html" },
-    { category: "woman", name: "TAKAKO", size: "171 / 82 / 64 / 89", img: "./assets/models_image/takako/photo_1.webp", link: "./models/takako.html" },
-    { category: "woman", name: "Yumika", size: "170 / 79 / 67 / 85", img: "./assets/models_image/yumika/photo_1.webp", link: "./models/yumika.html" },
-    { category: "woman", name: "Alina", size: "164 / 82 / 60 / 86", img: "./assets/models_image/alina/photo_1.webp", link: "./models/alina.html" },
-    { category: "woman", name: "Fadie", size: "160 / 82 / 62 / 90", img: "./assets/models_image/fadile/photo_1.webp", link: "./models/fadile.html" },
-    
-    /* MAN */
-    { category: "man", name: "Bhuiyan", size: "178 / 85 / 62 / 90", img: "./assets/models_image/bhuiyan/photo_1.webp", link: "./models/bhuiyan.html" },
-    { category: "man", name: "Alex", size: "182 / 88 / 74 / 92", img: "./assets/models_image/alex/photo_1.webp", link: "./models/alex.html" },
-    { category: "man", name: "KOU", size: "185 / 90 / 76 / 94", img: "./assets/models_image/kou/photo_1.webp", link: "./models/kou.html" },
+    const allCastsData = [
+        /* WOMAN */
+        { category: "woman", name: "ANGELA", size: "172 / 85 / 69 / 95", img: "./assets/models_all_image/0_angela/photo_1.webp", link: "./models/angela.html" },
+        { category: "woman", name: "TAKAKO", size: "171 / 82 / 64 / 89", img: "./assets/models_image/takako/photo_1.webp", link: "./models/takako.html" },
+        { category: "woman", name: "Yumika", size: "170 / 79 / 67 / 85", img: "./assets/models_image/yumika/photo_1.webp", link: "./models/yumika.html" },
+        { category: "woman", name: "Alina", size: "164 / 82 / 60 / 86", img: "./assets/models_image/alina/photo_1.webp", link: "./models/alina.html" },
+        { category: "woman", name: "Fadie", size: "160 / 82 / 62 / 90", img: "./assets/models_image/fadile/photo_1.webp", link: "./models/fadile.html" },
+        
+        /* MAN */
+        { category: "man", name: "Bhuiyan", size: "178 / 85 / 62 / 90", img: "./assets/models_image/bhuiyan/photo_1.webp", link: "./models/bhuiyan.html" },
+        { category: "man", name: "Alex", size: "182 / 88 / 74 / 92", img: "./assets/models_image/alex/photo_1.webp", link: "./models/alex.html" },
+        { category: "man", name: "KOU", size: "185 / 90 / 76 / 94", img: "./assets/models_image/kou/photo_1.webp", link: "./models/kou.html" },
 
-    /* ARTIST */
-    { category: "artist", name: "齊藤 英里", size: "160 / 76 / 58 / 81", img: "./assets/artists_image/eri_saito/photo_1.webp", link: "./artists/eri_saito.html" },
-    { category: "artist", name: "VIVIAN", size: "173 / 94 / 74 / 95", img: "./assets/artists_image/vivian/photo_1.webp", link: "./artists/vivian.html" }
-    { category: "artist", name: "KEIKO", size: "180 / 81 / 66 / 91", img: "./assets/artists_image/keiko/photo_1.webp", link: "./artists/keiko.html" }
-];
+        /* ARTIST */
+        { category: "artist", name: "齊藤 英里", size: "160 / 76 / 58 / 81", img: "./assets/artists_image/eri_saito/photo_1.webp", link: "./artists/eri_saito.html" },
+        { category: "artist", name: "VIVIAN", size: "173 / 94 / 74 / 95", img: "./assets/artists_image/vivian/photo_1.webp", link: "./artists/vivian.html" },
+        { category: "artist", name: "KEIKO", size: "180 / 81 / 66 / 91", img: "./assets/artists_image/keiko/photo_1.webp", link: "./artists/keiko.html" }
+    ];
 
     const grid = document.getElementById('all-models-grid');
 
@@ -297,15 +297,15 @@ const allCastsData = [
     }
 
     // フィルタータブ切り替え
-    function filterModels(category) {
+    function filterModels(category, btnElement) {
         document.querySelectorAll('.filter-tab').forEach(btn => btn.classList.remove('active'));
-        if (event && event.target) {
-            event.target.classList.add('active');
+        if (btnElement) {
+            btnElement.classList.add('active');
         }
         renderCasts(category);
     }
 
-    // 初回描画
+    // 初回描画（ALLを選択状態）
     renderCasts('all');
 
     // Topへ戻るボタン
