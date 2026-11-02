@@ -88,6 +88,13 @@
             -ms-user-select: none;
             user-select: none;
         }
+
+        /* アクティブタブ指定スタイル */
+        .filter-tab.active {
+            color: #1C110C;
+            background-color: #d7be53;
+            border-color: #d7be53;
+        }
     </style>
 </head>
 <body class="bg-[#1C110C] text-[#EAE6E1] font-sans antialiased selection:bg-[#d7be53] selection:text-white overflow-x-hidden min-h-screen flex flex-col justify-between">
@@ -170,14 +177,22 @@
     <main class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 w-full flex-grow">
         
         <!-- HEADER TITLE -->
-        <div class="text-center mb-16">
+        <div class="text-center mb-12">
             <p class="font-serif text-[#d7be53] text-xs tracking-[0.3em] uppercase mb-2">Fairy Models Agency</p>
             <h1 class="font-serif text-3xl md:text-5xl tracking-[0.2em] text-white uppercase font-light">ARTIST</h1>
-            <div class="w-20 h-[1px] bg-[#d7be53]/30 mx-auto mt-4"></div>
         </div>
 
-        <!-- ARTISTS GRID (PC: 4列配置) -->
-        <div id="artist-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8 max-w-4xl mx-auto"></div>
+        <!-- CATEGORY FILTER TABS -->
+        <div class="flex flex-wrap justify-center gap-3 mb-16 text-xs tracking-[0.2em]">
+            <button onclick="filterModels('all')" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ALL</button>
+            <button onclick="filterModels('woman')" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">WOMAN</button>
+            <button onclick="filterModels('man')" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">MAN</button>
+            <button onclick="filterModels('artist')" class="filter-tab active border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ARTIST</button>
+            <button onclick="filterModels('direct_booking')" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">DIRECT BOOKING</button>
+        </div>
+
+        <!-- ALL MODELS GRID (models_all.html と完全同一の4列配置規格) -->
+        <div id="all-models-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"></div>
 
     </main>
 
@@ -198,7 +213,7 @@
                 
                 <div class="flex flex-col justify-center space-y-6">
                     <p class="text-xs text-gray-400 font-light tracking-widest leading-relaxed">
-                        出演・キャスティングのご依頼、各種お問い合わせ、モデル・アーティスト応募は下記専用フォームより承っております。
+                        出演・キャスティングのご依頼、各種お問い合わせ、モデル応募は下記専用フォームより承っております。
                     </p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <a href="./contact.html" class="group block bg-[#d7be53] text-[#1C110C] py-4 text-center rounded transition-all duration-300 hover:bg-[#DDCB82] shadow-lg">
@@ -259,58 +274,38 @@
         });
     });
 
-    // アーティスト専用データリスト
-    const artistsData = [
-        { 
-            name: "齊藤 英里", 
-            size: "160 / 76 / 58 / 81", 
-            img: "./assets/artists_image/eri_saito/photo_1.webp", 
-            link: "./artists/eri_saito.html" 
-        }
+    // 全キャストデータリスト（全モデルおよびARTIST齊藤英里さん）
+    const allCastsData = [
+        /* WOMAN */
+        { category: "woman", name: "ANGELA", size: "172 / 85 / 69 / 95", img: "./assets/models_all_image/angela/photo_1.webp", link: "./models/models_all/angela.html" },
+        { category: "woman", name: "TAKAKO", size: "171 / 82 / 64 / 89", img: "./assets/models_image/takako/photo_1.webp", link: "./models/takako.html" },
+        { category: "woman", name: "Yumika", size: "170 / 79 / 67 / 85", img: "./assets/models_image/yumika/photo_1.webp", link: "./models/yumika.html" },
+        { category: "woman", name: "Alina", size: "164 / 82 / 60 / 86", img: "./assets/models_image/alina/photo_1.webp", link: "./models/alina.html" },
+        { category: "woman", name: "Fadie", size: "160 / 82 / 62 / 90", img: "./assets/models_image/fadile/photo_1.webp", link: "./models/fadile.html" },
+        
+        /* MAN */
+        { category: "man", name: "Bhuiyan", size: "178 / 85 / 62 / 90", img: "./assets/models_image/bhuiyan/photo_1.webp", link: "./models/bhuiyan.html" },
+        { category: "man", name: "Alex", size: "182 / 88 / 74 / 92", img: "./assets/models_image/alex/photo_1.webp", link: "./models/alex.html" },
+        { category: "man", name: "KOU", size: "185 / 90 / 76 / 94", img: "./assets/models_image/kou/photo_1.webp", link: "./models/kou.html" },
+        
+        /* ARTIST */
+        { category: "artist", name: "齊藤 英里", size: "160 / 76 / 58 / 81", img: "./assets/artists_image/eri_saito/photo_1.webp", link: "./artists/eri_saito.html" }
     ];
 
-    const grid = document.getElementById('artist-grid');
+    const grid = document.getElementById('all-models-grid');
 
-    // アーティスト描画処理
-    function renderArtists() {
+    // キャスト描画処理
+    function renderCasts(filterCategory = 'artist') {
         grid.innerHTML = '';
-        artistsData.forEach(artist => {
-            const card = document.createElement('div');
-            card.className = "fade-in-up transition-all duration-300 group cursor-pointer text-center";
-            card.innerHTML = `
-                <a href="${artist.link}" class="block">
-                    <div class="flash-hover aspect-[2/3] w-full bg-[#2A1A14] overflow-hidden relative mb-4 rounded-sm border border-white/5">
-                        <img src="${artist.img}" alt="${artist.name}" class="w-full h-full object-cover opacity-90 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-100">
-                    </div>
-                    <div class="pb-2">
-                        <h4 class="font-serif text-sm tracking-[0.2em] text-[#EAE6E1] font-medium uppercase transition-colors group-hover:text-[#d7be53]">${artist.name}</h4>
-                        <p class="text-[9px] text-gray-500 tracking-[0.15em] mt-1.5 font-light">${artist.size}</p>
-                    </div>
-                </a>
-            `;
-            grid.appendChild(card);
-        });
+        const filteredList = filterCategory === 'all' 
+            ? allCastsData 
+            : allCastsData.filter(item => item.category === filterCategory);
 
-        setTimeout(() => {
-            document.querySelectorAll('.fade-in-up').forEach((el, index) => {
-                setTimeout(() => el.classList.add('is-visible'), index * 80);
-            });
-        }, 50);
-    }
-
-    renderArtists();
-
-    // Page Top ボタン
-    window.addEventListener('scroll', () => {
-        const btn = document.getElementById('scrollTopBtn');
-        if (window.scrollY > 300) {
-            btn.classList.remove('opacity-0', 'invisible');
-            btn.classList.add('opacity-100', 'visible');
-        } else {
-            btn.classList.remove('opacity-100', 'visible');
-            btn.classList.add('opacity-0', 'invisible');
+        if (filteredList.length === 0) {
+            grid.innerHTML = `<div class="col-span-full text-center py-20 text-gray-500 font-serif tracking-widest text-sm">NO CASTS FOUND</div>`;
+            return;
         }
-    });
-</script>
-</body>
-</html>
+
+        filteredList.forEach(model => {
+            const card = document.createElement('div');
+            card.className = "fade-in-up transition-all duration-3
