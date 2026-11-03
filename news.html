@@ -367,7 +367,7 @@
         }
     });
 
-    // ニュースもっと見る制御（初期10件、以降5件ずつ表示）
+    // ニュースもっと見る・閉じる制御（初期10件、以降5件ずつ表示）
     document.addEventListener('DOMContentLoaded', () => {
         const INITIAL_COUNT = 10;
         const STEP_COUNT = 5;
@@ -380,26 +380,42 @@
             return;
         }
 
-        // 11件目以降を隠す
-        items.forEach((item, index) => {
-            if (index >= INITIAL_COUNT) {
-                item.classList.add('is-hidden');
-            }
-        });
+        // 初期状態で11件目以降を隠す
+        function resetNewsList() {
+            items.forEach((item, index) => {
+                if (index >= INITIAL_COUNT) {
+                    item.classList.add('is-hidden');
+                }
+            });
+            loadMoreBtn.textContent = 'MORE NEWS +';
+            loadMoreContainer.classList.remove('hidden');
+        }
 
-        // ボタンを表示
-        loadMoreContainer.classList.remove('hidden');
+        resetNewsList();
 
         // ボタンクリック時の処理
         loadMoreBtn.addEventListener('click', () => {
             const hiddenItems = document.querySelectorAll('#news-list .news-item.is-hidden');
             
+            // すべて表示されている状態の時にクリックされた場合 → リストを畳む
+            if (hiddenItems.length === 0) {
+                resetNewsList();
+                // ニュース一覧の上部へスムーズにスクロール
+                const newsListHeader = document.getElementById('news-list');
+                if (newsListHeader) {
+                    newsListHeader.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                return;
+            }
+
+            // まだ非表示の要素がある場合 → 5件ずつ開く
             for (let i = 0; i < STEP_COUNT && i < hiddenItems.length; i++) {
                 hiddenItems[i].classList.remove('is-hidden');
             }
 
+            // 全て表示しきったらボタンテキストを「CLOSE -」に変更
             if (document.querySelectorAll('#news-list .news-item.is-hidden').length === 0) {
-                loadMoreContainer.classList.add('hidden');
+                loadMoreBtn.textContent = 'CLOSE -';
             }
         });
     });
