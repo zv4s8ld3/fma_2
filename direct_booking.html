@@ -131,7 +131,7 @@
                     </div>
 
                     <a href="./artist.html" class="hover:text-[#DDCB82] transition-colors uppercase">ARTIST</a>
-                    <a href="./direct_booking.html" class="hover:text-[#DDCB82] transition-colors uppercase">DIRECT BOOKING</a>
+                    <a href="./direct_booking.html" class="text-[#DDCB82] font-semibold transition-colors uppercase">DIRECT BOOKING</a>
                     <a href="./index.html#news" class="hover:text-[#DDCB82] transition-colors uppercase">NEWS</a>
                     <a href="./index.html#contact" class="hover:text-[#DDCB82] transition-colors uppercase">CONTACT</a>
                     <a href="./fma_model_entry.html" class="hover:text-[#1C110C] hover:bg-[#d7be53] border border-[#d7be53] text-[#d7be53] px-3 py-1.5 rounded transition-all uppercase">応募フォーム</a>
@@ -164,7 +164,7 @@
                     </div>
                 </div>
                 <a href="./artist.html" class="mobile-link text-[#d7be53] hover:text-[#DDCB82] py-1 border-b border-white/5 transition-colors">ARTIST</a>
-                <a href="./direct_booking.html" class="mobile-link text-[#d7be53] hover:text-[#DDCB82] py-1 border-b border-white/5 transition-colors">DIRECT BOOKING</a>
+                <a href="./direct_booking.html" class="mobile-link text-[#DDCB82] font-semibold py-1 border-b border-white/5 transition-colors">DIRECT BOOKING</a>
                 <a href="./index.html#news" class="mobile-link text-[#d7be53] hover:text-[#DDCB82] py-1 border-b border-white/5 transition-colors">NEWS</a>
                 <a href="./index.html#contact" class="mobile-link text-[#d7be53] hover:text-[#DDCB82] py-1 border-b border-white/5 transition-colors">CONTACT</a>
                 <a href="./fma_model_entry.html" class="mobile-link text-[#d7be53] font-bold py-2 border border-[#d7be53] rounded transition-colors">応募フォーム</a>
@@ -183,14 +183,14 @@
 
         <!-- CATEGORY FILTER TABS -->
         <div class="flex flex-wrap justify-center gap-3 mb-16 text-xs tracking-[0.2em]">
-            <button onclick="filterModels('all', this)" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ALL</button>
-            <button onclick="filterModels('woman', this)" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">WOMAN</button>
-            <button onclick="filterModels('man', this)" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">MAN</button>
-            <button onclick="filterModels('artist', this)" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ARTIST</button>
+            <a href="./models_all.html" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ALL</a>
+            <a href="./index.html#models-woman" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">WOMAN</a>
+            <a href="./index.html#models-man" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">MAN</a>
+            <a href="./artist.html" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ARTIST</a>
             <button onclick="filterModels('direct_booking', this)" class="filter-tab active border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">DIRECT BOOKING</button>
         </div>
 
-        <!-- ALL MODELS GRID (PC: 4列配置) -->
+        <!-- DIRECT BOOKING GRID (PC: 4列配置) -->
         <div id="all-models-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"></div>
 
     </main>
@@ -273,18 +273,11 @@
         });
     });
 
-    // 全キャストデータリスト（各モデルページの最新情報と完全同期）
+    // ダイレクトブッキング対象キャストデータ（必要な対象者のみここに指定）
     const allCastsData = [
-        /* WOMAN */
-        { category: "woman", name: "TAKAKO", size: "171 / 82 / 64 / 89", img: "./assets/models_image/takako/photo_1.webp", link: "./models/takako.html" },
-        { category: "woman", name: "Yumika", size: "170 / 79 / 67 / 85", img: "./assets/models_image/yumika/photo_1.webp", link: "./models/yumika.html" },
-        { category: "woman", name: "Alina", size: "164 / 82 / 60 / 86", img: "./assets/models_image/alina/photo_1.webp", link: "./models/alina.html" },
-        { category: "woman", name: "Fadile", size: "160 / 82 / 62 / 90", img: "./assets/models_image/fadile/photo_1.webp", link: "./models/fadile.html" },
-        
-        /* MAN */
-        { category: "man", name: "BHUIYAN", size: "180 / 90 / 73 / 88", img: "./assets/models_image/bhuiyan/photo.webp", link: "./models/bhuiyan.html" },
-        { category: "man", name: "ALEX", size: "180 / 96 / 98 / 95", img: "./assets/models_image/alex/photo_1.webp", link: "./models/alex.html" },
-        { category: "man", name: "KOU", size: "180 / 101.5 / 78 / 101", img: "./assets/models_image/kou/photo_1.webp", link: "./models/kou.html" }
+        /* 例: ダイレクトブッキング対象者を追加する場合は以下のように追加します
+        { category: "direct_booking", name: "CAST NAME", size: "170 / 80 / 60 / 85", img: "./assets/direct_image/photo_1.webp", link: "./direct/sample.html" }
+        */
     ];
 
     const grid = document.getElementById('all-models-grid');
@@ -345,7 +338,7 @@
             btn.classList.remove('opacity-0', 'invisible');
             btn.classList.add('opacity-100', 'visible');
         } else {
-            btn.classList.remove('opacity-100', 'visible');
+            btn.classList.remove('opacity-100', 'invisible');
             btn.classList.add('opacity-0', 'invisible');
         }
     });
