@@ -167,14 +167,37 @@
 
     <main class="max-w-[1400px] mx-auto px-4 pt-16 pb-24 w-full flex-grow">
         
-        <div class="text-center mb-16">
+        <!-- タイトルエリア -->
+        <div class="text-center mb-12">
             <h1 class="font-serif text-3xl tracking-[0.2em] text-[#d7be53] uppercase font-light">ARTIST</h1>
             <p class="text-[10px] tracking-widest text-gray-400 mt-3 uppercase">所属アーティスト</p>
             <div class="w-28 h-[1px] bg-[#d7be53]/30 mx-auto mt-4"></div>
         </div>
 
-        <!-- アーティスト一覧グリッド -->
-        <div id="artist-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"></div>
+        <!-- カテゴリフィルターボタン一覧 (ALL / WOMAN / MAN / ARTIST / DIRECT BOOKING) -->
+        <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 mb-16 text-xs tracking-[0.2em] uppercase font-medium">
+            <a href="./models_all.html" class="px-5 py-2 border border-[#d7be53]/30 text-[#d7be53] hover:border-[#d7be53] hover:bg-[#d7be53]/10 transition-all rounded">ALL</a>
+            <a href="./index.html#models-woman" class="px-5 py-2 border border-[#d7be53]/30 text-[#d7be53] hover:border-[#d7be53] hover:bg-[#d7be53]/10 transition-all rounded">WOMAN</a>
+            <a href="./index.html#models-man" class="px-5 py-2 border border-[#d7be53]/30 text-[#d7be53] hover:border-[#d7be53] hover:bg-[#d7be53]/10 transition-all rounded">MAN</a>
+            <a href="./artist.html" class="px-5 py-2 border border-[#d7be53] bg-[#d7be53] text-[#1C110C] font-semibold transition-all rounded shadow-md">ARTIST</a>
+            <a href="./direct_booking.html" class="px-5 py-2 border border-[#d7be53]/30 text-[#d7be53] hover:border-[#d7be53] hover:bg-[#d7be53]/10 transition-all rounded">DIRECT BOOKING</a>
+        </div>
+
+        <!-- 1段目: WOMAN ARTIST セクション -->
+        <div id="artist-woman" class="mb-16">
+            <div class="mb-8 border-b border-white/5 pb-2">
+                <h3 class="font-serif text-lg tracking-[0.2em] text-[#d7be53] uppercase font-light">WOMAN</h3>
+            </div>
+            <div id="artist-woman-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"></div>
+        </div>
+
+        <!-- 2段目: MAN ARTIST セクション -->
+        <div id="artist-man" class="mb-16">
+            <div class="mb-8 border-b border-white/5 pb-2">
+                <h3 class="font-serif text-lg tracking-[0.2em] text-[#d7be53] uppercase font-light">MAN</h3>
+            </div>
+            <div id="artist-man-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"></div>
+        </div>
 
         <div class="text-center mt-16">
             <a href="./index.html" class="text-xs tracking-widest text-gray-400 hover:text-[#d7be53] transition-colors inline-flex items-center gap-2 font-medium">
@@ -263,18 +286,30 @@
         });
     });
 
-    // アーティストデータ定義
-    const artistList = [
+    // 女性アーティストデータ (WOMAN)
+    const womanArtists = [
         { name: "KEIKO", role: "ARTIST", img: "./assets/artists_image/keiko/photo_1.webp", link: "./artists/keiko.html" },
         { name: "VIVIAN", role: "ARTIST", img: "./assets/artists_image/vivian/photo_1.webp", link: "./artists/vivian.html" },
         { name: "Eri Saito", role: "ARTIST", img: "./assets/artists_image/eri_saito/photo_1.webp", link: "./artists/eri_saito.html" },
     ];
 
-    // アーティストカード生成関数
+    // 男性アーティストデータ (MAN)
+    const manArtists = [
+        // 男性アーティスト登録時にここへ定義追加
+    ];
+
+    // カード生成関数
     function renderArtistCards(dataList, containerId) {
         const container = document.getElementById(containerId);
         if(!container) return;
         
+        if (dataList.length === 0) {
+            // 対象カテゴリに該当がない場合はセクション非表示
+            const parentSec = container.closest('div[id^="artist-"]');
+            if(parentSec) parentSec.style.display = 'none';
+            return;
+        }
+
         dataList.forEach(artist => {
             const card = document.createElement('div');
             card.className = "fade-in-up transition-all duration-300 group cursor-pointer text-center";
@@ -293,8 +328,9 @@
         });
     }
 
-    // 描画実行
-    renderArtistCards(artistList, 'artist-grid');
+    // 各グリッド描画実行
+    renderArtistCards(womanArtists, 'artist-woman-grid');
+    renderArtistCards(manArtists, 'artist-man-grid');
 
     // フェードインアニメーション適用
     document.addEventListener("DOMContentLoaded", () => {
