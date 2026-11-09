@@ -150,7 +150,7 @@
                 <div class="space-y-3">
                     <p class="font-serif text-[#d7be53] text-xs tracking-[0.3em] uppercase">FAIRY ARTIST MANAGEMENT</p>
                     <h1 class="text-3xl md:text-5xl tracking-[0.1em] text-white font-serif font-medium uppercase">
-                        Sayuri <span class="text-sm font-sans font-light text-gray-400 tracking-normal normal-case ml-3"></span>
+                        Sayuri
                     </h1>
                 </div>
                 
@@ -179,8 +179,27 @@
             </div>
         </div>
 
-        <!-- LOWER: ポートフォリオ PDF セクション -->
+        <!-- LOWER: アザーカット（PORTFOLIO GALLERY） -->
         <div class="border-t border-white/5 pt-16">
+            <h2 class="font-serif text-xs tracking-[0.3em] text-[#d7be53] uppercase mb-10 text-center">PORTFOLIO GALLERY</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12 items-start max-w-4xl mx-auto">
+                
+                <!-- アザー写真 1 (photo_2.webp) -->
+                <div class="aspect-[3/4] overflow-hidden bg-brand-medium border border-white/5 rounded-sm">
+                    <img src="../assets/direct_booking_image/sayuri/photo_2.webp" alt="Sayuri Gallery 1" class="w-full h-full object-cover">
+                </div>
+
+                <!-- アザー写真 2 (photo_3.webp) -->
+                <div class="aspect-[3/4] overflow-hidden bg-brand-medium border border-white/5 rounded-sm">
+                    <img src="../assets/direct_booking_image/sayuri/photo_3.webp" alt="Sayuri Gallery 2" class="w-full h-full object-cover">
+                </div>
+
+            </div>
+        </div>
+
+        <!-- LOWER: ポートフォリオ PDF セクション -->
+        <div class="border-t border-white/5 pt-16 mt-16">
             <h2 class="font-serif text-xs tracking-[0.3em] text-[#d7be53] uppercase mb-10 text-center">ARTIST PORTFOLIO (PDF)</h2>
             
             <div class="max-w-4xl mx-auto space-y-6">
@@ -285,7 +304,7 @@
     // Page Top ボタン
     window.addEventListener('scroll', () => {
         const btn = document.getElementById('scrollTopBtn');
-        if (window.scrollY > 300) {
+        if (window.scrollY > 300) { 
             btn.classList.remove('opacity-0', 'invisible');
             btn.classList.add('opacity-100', 'visible');
         } else {
@@ -293,6 +312,6 @@
             btn.classList.add('opacity-0', 'invisible');
         }
     });
-</script>
+    </script>
 </body>
 </html>
