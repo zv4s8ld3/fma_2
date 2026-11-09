@@ -273,11 +273,15 @@
         });
     });
 
-    // ダイレクトブッキング対象キャストデータ（必要な対象者のみここに指定）
+    // ダイレクトブッキング対象キャストデータ
     const allCastsData = [
-        /* 例: ダイレクトブッキング対象者を追加する場合は以下のように追加します
-        { category: "direct_booking", name: "SAYURI", size: "170 / 80 / 60 / 85", img: "./assets/direct_image/photo_1.webp", link: "./direct/sample.html" }
-        */
+        { 
+            category: "direct_booking", 
+            name: "SAYURI", 
+            size: "160 / 76 / 58 / 81 / 23.5", 
+            img: "./assets/direct_booking_image/sayuri/photo_1.webp", 
+            link: "./direct_booking/sayuri.html" 
+        }
     ];
 
     const grid = document.getElementById('all-models-grid');
@@ -338,7 +342,7 @@
             btn.classList.remove('opacity-0', 'invisible');
             btn.classList.add('opacity-100', 'visible');
         } else {
-            btn.classList.remove('opacity-100', 'invisible');
+            btn.classList.remove('opacity-100', 'visible');
             btn.classList.add('opacity-0', 'invisible');
         }
     });
