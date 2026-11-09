@@ -12,6 +12,12 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
+    <!-- Favicons -->
+    <link rel="icon" href="./favicon.ico" sizes="any">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./favicon-32x32.png" type="image/png">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+
     <!-- Fonts & Tailwind -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -237,34 +243,44 @@
     }
     menuBtn.addEventListener('click', toggleMenu);
 
-    // 全キャストデータリスト（モデル＋アーティスト）
+    // 全キャストデータリスト（モデル＋アーティスト＋ダイレクトブッキング）
     const allCastsData = [
         /* WOMAN */
-        { category: "woman", name: "ANGELA", size: "172 / 85 / 69 / 95", img: "./assets/models_all_image/0_angela/photo_1.webp", link: "./models/models_all/angela.html" },
+        { category: "woman", name: "Isa", size: "171 / 83 / 60 / 83", img: "./assets/models_all_image/isa/photo_1.webp", link: "./models_all/isa.html" },
+        { category: "woman", name: "ANGELA", size: "172 / 85 / 69 / 95", img: "./assets/models_all_image/0_angela/photo_1.webp", link: "./models_all/angela.html" },
         { category: "woman", name: "TAKAKO", size: "171 / 82 / 64 / 89", img: "./assets/models_image/takako/photo_1.webp", link: "./models/takako.html" },
         { category: "woman", name: "Yumika", size: "170 / 79 / 67 / 85", img: "./assets/models_image/yumika/photo_1.webp", link: "./models/yumika.html" },
         { category: "woman", name: "Alina", size: "164 / 82 / 60 / 86", img: "./assets/models_image/alina/photo_1.webp", link: "./models/alina.html" },
         { category: "woman", name: "Fadie", size: "160 / 82 / 62 / 90", img: "./assets/models_image/fadile/photo_1.webp", link: "./models/fadile.html" },
-        { category: "woman", name: "Aga", size: "161 / 75 / 59 / 85", img: "./assets/models_all_image/aga/photo_1.webp", link: "./models/models_all/aga.html" },
-        { category: "woman", name: "MARITZA", size: "- / - / - / -", img: "./assets/models_all_image/maritza/photo_1.webp", link: "./models/models_all/maritza.html" },
+        { category: "woman", name: "Aga", size: "161 / 75 / 59 / 85", img: "./assets/models_all_image/aga/photo_1.webp", link: "./models_all/aga.html" },
+        { category: "woman", name: "MARITZA", size: "- / - / - / -", img: "./assets/models_all_image/maritza/photo_1.webp", link: "./models_all/maritza.html" },
         
         /* MAN */
-        { category: "man", name: "Amir", size: "181 / 96 / 79 / 96", img: "./assets/models_all_image/amir/photo_1.webp", link: "./models/models_all/amir.html" },
-        { category: "man", name: "Ash", size: "180 / 93 / 76 / 86", img: "./assets/models_all_image/ash/photo_1.webp", link: "./models/models_all/ash.html" },
-        { category: "man", name: "BEN", size: "180 / 91 / 71 / 91", img: "./assets/models_all_image/ben/photo_1.webp", link: "./models/models_all/ben.html" },
-        { category: "man", name: "CHRISTOPHE", size: "183 / 109 / 86 / 106", img: "./assets/models_all_image/christophe/photo_1.webp", link: "./models/models_all/christophe.html" },
-        { category: "man", name: "FONDA JEREMY", size: "181 / 101 / 82 / 95", img: "./assets/models_all_image/fonda_jeremy/photo_1.webp", link: "./models/models_all/jeremy_fonda.html" },
-        { category: "man", name: "RAFAEL", size: "174 / 88 / 72 / 90", img: "./assets/models_all_image/rafael/photo_1.webp", link: "./models/models_all/rafael.html" },
-        { category: "man", name: "STEVE WILEY", size: "181 / 104 / 90 / 102", img: "./assets/models_all_image/steve_wiley/photo_1.webp", link: "./models/models_all/steve_wiley.html" },
-        { category: "man", name: "JOHANNES", size: "185 / 95 / 81 / 93", img: "./assets/models_all_image/johannes/photo_1.webp", link: "./models/models_all/johannes.html" },
-        { category: "man", name: "Bhuiyan", size: "178 / 85 / 62 / 90", img: "./assets/models_image/bhuiyan/photo_1.webp", link: "./models/bhuiyan.html" },
-        { category: "man", name: "Alex", size: "182 / 88 / 74 / 92", img: "./assets/models_image/alex/photo_1.webp", link: "./models/alex.html" },
-        { category: "man", name: "KOU", size: "185 / 90 / 76 / 94", img: "./assets/models_image/kou/photo_1.webp", link: "./models/kou.html" },
+        { category: "man", name: "Alfred", size: "179 / 99 / 82 / 92", img: "./assets/models_all_image/alfred/photo_1.webp", link: "./models_all/alfred.html" },
+        { category: "man", name: "Julien J", size: "177 / 98 / 75 / 95", img: "./assets/models_all_image/julien_j/photo_1.webp", link: "./models_all/julien_j.html" },
+        { category: "man", name: "航波", size: "182 / 99 / 78 / 100", img: "./assets/models_all_image/koha/photo_1.webp", link: "./models_all/koha.html" },
+        { category: "man", name: "Ryo", size: "182 / 96 / 80 / 97", img: "./assets/models_all_image/ryo/photo_1.webp", link: "./models_all/ryo.html" },
+        { category: "man", name: "So", size: "182 / 83 / 67 / 84", img: "./assets/models_all_image/so/photo_1.webp", link: "./models_all/so.html" },
+        { category: "man", name: "Tyler T", size: "186 / 99 / 80 / 98", img: "./assets/models_all_image/tyler_t/photo_1.webp", link: "./models_all/tyler_t.html" },
+        { category: "man", name: "JEREMY FONDA", size: "181 / 101 / 82 / 95", img: "./assets/models_all_image/jeremy_fonda/photo_1.webp", link: "./models_all/jeremy_fonda.html" },
+        { category: "man", name: "RAFAEL", size: "174 / 88 / 72 / 90", img: "./assets/models_all_image/rafael/photo_1.webp", link: "./models_all/rafael.html" },
+        { category: "man", name: "Amir", size: "181 / 96 / 76 / 96", img: "./assets/models_all_image/amir/photo_1.webp", link: "./models_all/amir.html" },
+        { category: "man", name: "Ash", size: "180 / 93 / 76 / 86", img: "./assets/models_all_image/ash/photo_1.webp", link: "./models_all/ash.html" },
+        { category: "man", name: "BEN", size: "180 / 91 / 71 / 91", img: "./assets/models_all_image/ben/photo_1.webp", link: "./models_all/ben.html" },
+        { category: "man", name: "CHRISTOPHE", size: "183 / 109 / 86 / 106", img: "./assets/models_all_image/christophe/photo_1.webp", link: "./models_all/christophe.html" },
+        { category: "man", name: "STEVE WILEY", size: "181 / 104 / 90 / 102", img: "./assets/models_all_image/steve_wiley/photo_1.webp", link: "./models_all/steve_wiley.html" },
+        { category: "man", name: "JOHANNES", size: "185 / 95 / 81 / 93", img: "./assets/models_all_image/johannes/photo_1.webp", link: "./models_all/johannes.html" },
+        { category: "man", name: "Bhuiyan", size: "180 / 90 / 73 / 88", img: "./assets/models_image/bhuiyan/photo_1.webp", link: "./models/bhuiyan.html" },
+        { category: "man", name: "Alex", size: "180 / 96 / 98 / 95", img: "./assets/models_image/alex/photo_1.webp", link: "./models/alex.html" },
+        { category: "man", name: "KOU", size: "181 / 101.5 / 78 / 101", img: "./assets/models_image/kou/photo_1.webp", link: "./models/kou.html" },
 
         /* ARTIST */
         { category: "artist", name: "齊藤 英里", size: "160 / 76 / 58 / 81", img: "./assets/artists_image/eri_saito/photo_1.webp", link: "./artists/eri_saito.html" },
         { category: "artist", name: "VIVIAN", size: "173 / 94 / 74 / 95", img: "./assets/artists_image/vivian/photo_1.webp", link: "./artists/vivian.html" },
-        { category: "artist", name: "KEIKO", size: "180 / 81 / 66 / 91", img: "./assets/artists_image/keiko/photo_1.webp", link: "./artists/keiko.html" }
+        { category: "artist", name: "KEIKO", size: "180 / 81 / 66 / 91", img: "./assets/artists_image/keiko/photo_1.webp", link: "./artists/keiko.html" },
+
+        /* DIRECT BOOKING */
+        { category: "direct_booking", name: "SAYURI", size: "160 / 76 / 58 / 81", img: "./assets/direct_booking_image/sayuri/photo_1.webp", link: "./direct_booking/sayuri.html" }
     ];
 
     const grid = document.getElementById('all-models-grid');
