@@ -190,28 +190,28 @@
     <script>
     // 1. ニュースマスターデータ（新しいものが上に来るように記述）
     const newsData = [
-        // 2026.11.09 追加分（14名）
-        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Dennis", link: "./news/notice_20261109_14_dennis.html" },
-        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Michelle", link: "./news/notice_20261109_13_michelle.html" },
+        // 2026.11.09 追加分（14名 / 正しい連番ファイル名に修正）
+        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Dennis", link: "./news/notice_20261109_01_dennis.html" },
+        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Akira", link: "./news/notice_20261109_02_akira.html" },
+        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Gaz", link: "./news/notice_20261109_03_gaz.html" },
+        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "HD", link: "./news/notice_20261109_04_hd.html" },
+        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Jordy", link: "./news/notice_20261109_05_jordy.html" },
+        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Regan W", link: "./news/notice_20261109_06_regan_w.html" },
+        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Niclas E", link: "./news/notice_20261109_07_niclas_e.html" },
+        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Paolo Andrea Pietro", link: "./news/notice_20261109_08_paolo.html" },
+        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Leigh", link: "./news/notice_20261109_09_leigh.html" },
+        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "KIARA", link: "./news/notice_20261109_10_kiara.html" },
         { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Natali W", link: "./news/notice_20261109_11_natali_w.html" },
         { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Kayty", link: "./news/notice_20261109_12_kayty.html" },
-        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Anni", link: "./news/notice_20261109_15_anni.html" },
-        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "KIARA", link: "./news/notice_20261109_10_kiara.html" },
-        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Leigh", link: "./news/notice_20261109_09_leigh.html" },
-        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Paolo Andrea Pietro", link: "./news/notice_20261109_08_paolo.html" },
-        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Niclas E", link: "./news/notice_20261109_07_niclas_e.html" },
-        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Regan W", link: "./news/notice_20261109_06_regan_w.html" },
-        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Jordy", link: "./news/notice_20261109_05_jordy.html" },
-        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "HD", link: "./news/notice_20261109_04_hd.html" },
-        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Gaz", link: "./news/notice_20261109_03_gaz.html" },
-        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Akira", link: "./news/notice_20261109_02_akira.html" },
+        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Michelle", link: "./news/notice_20261109_13_michelle.html" },
+        { date: "2026-11-09", displayDate: "2026.11.09", label: "NEW", category: "Join", name: "Anni", link: "./news/notice_20261109_14_anni.html" },
         
         // 2026.11.06 既存モデル（3名）
         { date: "2026-11-06", displayDate: "2026.11.06", label: "", category: "Join", name: "クレア由貴", link: "./news/notice_20261106_01_claire_yuki.html" },
         { date: "2026-11-06", displayDate: "2026.11.06", label: "", category: "Join", name: "Tania Pinkus", link: "./news/notice_20261106_02_tania_pinkus.html" },
         { date: "2026-11-06", displayDate: "2026.11.06", label: "", category: "Join", name: "KiLi", link: "./news/notice_20261106_03_kili.html" },
 
-        // 2026.11.05 コンポジット更新（リンク先を ./models_all.html に修正）
+        // 2026.11.05 コンポジット更新（リンク先を ./models_all.html に指定）
         { date: "2026-11-05", displayDate: "2026.11.05", label: "", category: "Info", title: "【お知らせ】所属モデル（航波 / So / Tyler T / Julien J / Alfred / Isa / Ryo / SAYURI）のコンポジット・作品写真を更新いたしました", link: "./models_all.html" },
 
         // 2026.11.04 以前（過去ニュース）
