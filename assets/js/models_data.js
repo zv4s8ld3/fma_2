@@ -71,7 +71,7 @@ const ALL_CASTS_DATA = [
     // ==========================================
     { category: "woman", gender: "woman", name: "KiLi", size: "160 / 86 / 62 / 86", img: "./assets/models_all_image/kili/photo_1.webp", link: "./models/models_all/kili.html", isPickup: false, isNew: false },
     { category: "woman", gender: "woman", name: "Tania Pinkus", size: "163 / 97 / 73 / 98", img: "./assets/models_all_image/tania_pinkus/photo_1.webp", link: "./models/models_all/tania_pinkus.html", isPickup: false, isNew: false },
-    { category: "woman", gender: "woman", name: "クレオ 由貴", size: "166 / 80 / 57 / 84", img: "./assets/models_all_image/claire_yuki/photo_1.webp", link: "./models/models_all/claire_yuki.html", isPickup: false, isNew: false },
+    { category: "woman", gender: "woman", name: "クレオ 由貴", size: "166 / 80 / 57 / 84", img: "./assets/models_all_image/creo_yuki/photo_1.webp", link: "./models/models_all/creo_yuki.html", isPickup: false, isNew: false },
 
     // ==========================================
     // 2026.11.09 加入（最新 14名・NEWバッジ対象）
