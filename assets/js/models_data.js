@@ -85,7 +85,7 @@ const ALL_CASTS_DATA = [
     { category: "man", gender: "man", name: "Paolo Andrea Pietro", size: "188 / 120 / 96 / 112", img: "./assets/models_all_image/paolo/photo_1.webp", link: "./models/models_all/paolo.html", isPickup: false, isNew: true },
     { category: "man", gender: "man", name: "Niclas E", size: "171 / 96 / 86 / 99", img: "./assets/models_all_image/niclas_e/photo_1.webp", link: "./models/models_all/niclas_e.html", isPickup: false, isNew: true },
     { category: "man", gender: "man", name: "Regan W", size: "179 / 98 / 92 / 94", img: "./assets/models_all_image/regan_w/photo_1.webp", link: "./models/models_all/regan_w.html", isPickup: false, isNew: true },
-    { category: "man", gender: "man", name: "Jordy", size: "180 / 88 / 75 / 88", img: "./assets/models_all_image/jordy/photo_1.webp", link: "./models/models_all/jordy.html", isPickup: false, isNew: true },
+    { category: "man", gender: "man", name: "Jordy Miwa", size: "180 / 88 / 75 / 88", img: "./assets/models_all_image/jordy/photo_1.webp", link: "./models/models_all/jordy.html", isPickup: false, isNew: true },
     { category: "man", gender: "man", name: "HD", size: "180 / 95 / 79 / 107", img: "./assets/models_all_image/hd/photo_1.webp", link: "./models/models_all/hd.html", isPickup: false, isNew: true },
     { category: "man", gender: "man", name: "Gaz", size: "184 / 94 / 80 / 94", img: "./assets/models_all_image/gaz/photo_1.webp", link: "./models/models_all/gaz.html", isPickup: false, isNew: true },
     { category: "man", gender: "man", name: "Akira", size: "173 / 94 / 82 / 100", img: "./assets/models_all_image/akira/photo_1.webp", link: "./models/models_all/akira.html", isPickup: false, isNew: true },
