@@ -261,7 +261,8 @@
         </svg>
     </button>
 
-    <!-- SCRIPTS -->
+    <!-- 共通データファイルを読み込み -->
+    <script src="./assets/js/models_data.js"></script>
     <script>
     // 右クリック・ドラッグ防止
     document.addEventListener('contextmenu', (e) => { e.preventDefault(); });
@@ -286,27 +287,17 @@
         });
     });
 
-    // 女性アーティストデータ (WOMAN)
-    const womanArtists = [
-        { name: "KEIKO", role: "ARTIST", img: "./assets/artists_image/keiko/photo_1.webp", link: "./artists/keiko.html" },
-        { name: "VIVIAN", role: "ARTIST", img: "./assets/artists_image/vivian/photo_1.webp", link: "./artists/vivian.html" },
-        { name: "Eri Saito", role: "ARTIST", img: "./assets/artists_image/eri_saito/photo_1.webp", link: "./artists/eri_saito.html" },
-    ];
+    // 共通データからARTISTを自動抽出（新着順）
+    const womanArtists = ALL_CASTS_DATA.filter(m => m.category === 'artist' && m.gender === 'woman').reverse();
+    const manArtists = ALL_CASTS_DATA.filter(m => m.category === 'artist' && m.gender === 'man').reverse();
 
-    // 男性アーティストデータ (MAN)
-    const manArtists = [
-        // 男性アーティスト登録時にここへ定義追加
-    ];
-
-    // カード生成関数
     function renderArtistCards(dataList, containerId) {
         const container = document.getElementById(containerId);
-        if(!container) return;
-        
+        if (!container) return;
+
         if (dataList.length === 0) {
-            // 対象カテゴリに該当がない場合はセクション非表示
             const parentSec = container.closest('div[id^="artist-"]');
-            if(parentSec) parentSec.style.display = 'none';
+            if (parentSec) parentSec.style.display = 'none';
             return;
         }
 
@@ -320,7 +311,7 @@
                     </div>
                     <div class="pb-2">
                         <h4 class="font-serif text-sm tracking-[0.2em] text-[#EAE6E1] font-medium uppercase transition-colors group-hover:text-[#d7be53]">${artist.name}</h4>
-                        <p class="text-[9px] text-gray-500 tracking-[0.15em] mt-1.5 font-light uppercase">${artist.role}</p>
+                        <p class="text-[9px] text-gray-500 tracking-[0.15em] mt-1.5 font-light uppercase">ARTIST</p>
                     </div>
                 </a>
             `;
@@ -328,11 +319,9 @@
         });
     }
 
-    // 各グリッド描画実行
     renderArtistCards(womanArtists, 'artist-woman-grid');
     renderArtistCards(manArtists, 'artist-man-grid');
 
-    // フェードインアニメーション適用
     document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
             document.querySelectorAll('.fade-in-up').forEach((card, index) => {
@@ -343,7 +332,6 @@
         }, 50);
     });
 
-    // Topへ戻るボタン制御
     window.addEventListener('scroll', () => {
         const btn = document.getElementById('scrollTopBtn');
         if (window.scrollY > 300) {
@@ -354,6 +342,6 @@
             btn.classList.add('opacity-0', 'invisible');
         }
     });
-</script>
+    </script>
 </body>
 </html>
