@@ -266,7 +266,7 @@
         return arr;
     }
 
-    // キャスト描画処理
+   // キャスト描画処理
     function renderCasts() {
         grid.innerHTML = '';
 
@@ -279,10 +279,8 @@
         if (currentSort === 'shuffle') {
             list = shuffleArray(list);
         } else if (currentSort === 'newest') {
-            // 配列は下が最新なので逆順にする（ピックアップ優先＋新着順）
-            const pickups = list.filter(m => m.isPickup);
-            const others = list.filter(m => !m.isPickup).reverse();
-            list = [...pickups, ...others];
+            // 配列は下が最新なのでそのまま逆順にする（NEWバッジが最上段、ピックアップは下に来る）
+            list = [...list].reverse();
         } else if (currentSort === 'az') {
             list.sort((a, b) => a.name.localeCompare(b.name, 'en'));
         }
@@ -291,7 +289,6 @@
             grid.innerHTML = `<div class="col-span-full text-center py-20 text-gray-500 font-serif tracking-widest text-sm">NO CASTS FOUND</div>`;
             return;
         }
-
         list.forEach(model => {
             const newBadge = model.isNew
                 ? `<span class="absolute top-2.5 right-2.5 z-20 bg-[#1C110C]/85 border border-[#d7be53] text-[#d7be53] text-[9px] tracking-[0.2em] px-2 py-0.5 rounded-sm font-medium uppercase">NEW</span>`
