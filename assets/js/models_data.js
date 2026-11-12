@@ -26,7 +26,7 @@ const ALL_CASTS_DATA = [
     { category: "man", gender: "man", name: "Ryo", size: "182 / 96 / 80 / 97", img: "./assets/models_all_image/ryo/photo_1.webp", link: "./models/models_all/ryo.html", isPickup: false, isNew: false },
     { category: "man", gender: "man", name: "So", size: "182 / 83 / 67 / 84", img: "./assets/models_all_image/so/photo_1.webp", link: "./models/models_all/so.html", isPickup: false, isNew: false },
     { category: "man", gender: "man", name: "Tyler T", size: "186 / 99 / 80 / 98", img: "./assets/models_all_image/tyler_t/photo_1.webp", link: "./models/models_all/tyler_t.html", isPickup: false, isNew: false },
-    { category: "man", gender: "man", name: "JEREMY FONDA", size: "181 / 101 / 82 / 95", img: "./assets/models_all_image/jeremy_fonda/photo_1.webp", link: "./models/models_all/jeremy_fonda.html", isPickup: false, isNew: false },
+    { category: "man", gender: "man", name: "FONDA JEREMY ", size: "181 / 101 / 82 / 95", img: "./assets/models_all_image/jeremy_fonda/photo_1.webp", link: "./models/models_all/jeremy_fonda.html", isPickup: false, isNew: false },
     { category: "man", gender: "man", name: "RAFAEL", size: "174 / 88 / 72 / 90", img: "./assets/models_all_image/rafael/photo_1.webp", link: "./models/models_all/rafael.html", isPickup: false, isNew: false },
     { category: "man", gender: "man", name: "Amir", size: "181 / 96 / 76 / 96", img: "./assets/models_all_image/amir/photo_1.webp", link: "./models/models_all/amir.html", isPickup: false, isNew: false },
     { category: "man", gender: "man", name: "Ash", size: "180 / 93 / 76 / 86", img: "./assets/models_all_image/ash/photo_1.webp", link: "./models/models_all/ash.html", isPickup: false, isNew: false },
