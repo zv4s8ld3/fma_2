@@ -89,5 +89,12 @@ const ALL_CASTS_DATA = [
     { category: "man", gender: "man", name: "HD", size: "180 / 95 / 79 / 107", img: "./assets/models_all_image/hd/photo_1.webp", link: "./models/models_all/hd.html", isPickup: false, isNew: true },
     { category: "man", gender: "man", name: "Gaz", size: "184 / 94 / 80 / 94", img: "./assets/models_all_image/gaz/photo_1.webp", link: "./models/models_all/gaz.html", isPickup: false, isNew: true },
     { category: "man", gender: "man", name: "Akira", size: "173 / 94 / 82 / 100", img: "./assets/models_all_image/akira/photo_1.webp", link: "./models/models_all/akira.html", isPickup: false, isNew: true },
-    { category: "man", gender: "man", name: "Dennis", size: "176 / 96 / 90 / 93", img: "./assets/models_all_image/dennis/photo_1.webp", link: "./models/models_all/dennis.html", isPickup: false, isNew: true }
+    { category: "man", gender: "man", name: "Dennis", size: "176 / 96 / 90 / 93", img: "./assets/models_all_image/dennis/photo_1.webp", link: "./models/models_all/dennis.html", isPickup: false, isNew: true },
+
+    // ==========================================
+    // 2026.11.12 加入（最新 2名・NEWバッジ対象）
+    // ==========================================
+
+    { category: "woman", gender: "woman", name: "國立 華連", size: "163 / 88 / 63 / 90", img: "./assets/models_all_image/karen_kokuryu/photo_1.webp", link: "./models/models_all/karen_kokuryu.html", isPickup: false, isNew: true },
+    { category: "woman", gender: "woman", name: "Maria R", size: "169 / 88 / 59 / 90", img: "./assets/models_all_image/maria_r/photo_1.webp", link: "./models/models_all/maria_r.html", isPickup: false, isNew: true }
 ];
