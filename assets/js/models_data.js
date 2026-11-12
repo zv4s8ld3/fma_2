@@ -42,7 +42,7 @@ const ALL_CASTS_DATA = [
     // ==========================================
     { category: "woman", gender: "woman", name: "Fadile", size: "160 / 82 / 62 / 90", img: "./assets/models_image/fadile/photo_1.webp", link: "./models/fadile.html", isPickup: true, isNew: false },
     { category: "woman", gender: "woman", name: "Alina L", size: "164 / 82 / 60 / 86", img: "./assets/models_image/alina/photo_1.webp", link: "./models/alina.html", isPickup: true, isNew: false },
-    { category: "woman", gender: "woman", name: "Yumika", size: "170 / 79 / 67 / 85", img: "./assets/models_image/yumika/photo_1.webp", link: "./models/yumika.html", isPickup: true, isNew: false },
+    { category: "woman", gender: "woman", name: "Yumika M", size: "170 / 79 / 67 / 85", img: "./assets/models_image/yumika/photo_1.webp", link: "./models/yumika.html", isPickup: true, isNew: false },
 
     // ==========================================
     // 2026.10.28 加入（トップページ PICKUP）
