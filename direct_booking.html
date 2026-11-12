@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO & OGP -->
-    <title>DIRECT BOOKING | Fairy Models Agency</title>
-    <meta name="description" content="Fairy Models Agencyのダイレクトブッキングモデルポートフォリオ一覧。">
-    <meta property="og:title" content="DIRECT BOOKING | Fairy Models Agency">
-    <meta property="og:description" content="Fairy Models Agencyダイレクトブッキングモデル一覧。">
+    <title>ARTIST | Fairy Models Agency</title>
+    <meta name="description" content="Fairy Models Agency所属のアーティスト・クリエイター一覧。ヘアメイク、スタイリスト、フォトグラファー等の詳細プロフィール・ポートフォリオをご覧いただけます。">
+    <meta property="og:title" content="ARTIST | Fairy Models Agency">
+    <meta property="og:description" content="Fairy Models Agency所属のアーティスト・クリエイター一覧。">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -47,7 +47,7 @@
     
     <style>
         html { scroll-behavior: smooth; }
-
+        
         .flash-hover {
             position: relative;
             overflow: hidden;
@@ -88,13 +88,6 @@
             -ms-user-select: none;
             user-select: none;
         }
-
-        /* アクティブタブ指定スタイル */
-        .filter-tab.active {
-            color: #1C110C;
-            background-color: #d7be53;
-            border-color: #d7be53;
-        }
     </style>
 </head>
 <body class="bg-[#1C110C] text-[#EAE6E1] font-sans antialiased selection:bg-[#d7be53] selection:text-white overflow-x-hidden min-h-screen flex flex-col justify-between">
@@ -130,9 +123,9 @@
                         </div>
                     </div>
 
-                    <a href="./artist.html" class="hover:text-[#DDCB82] transition-colors uppercase">ARTIST</a>
-                    <a href="./direct_booking.html" class="text-[#DDCB82] font-semibold transition-colors uppercase">DIRECT BOOKING</a>
-                    <a href="./index.html#news" class="hover:text-[#DDCB82] transition-colors uppercase">NEWS</a>
+                    <a href="./artist.html" class="text-[#DDCB82] font-semibold transition-colors uppercase">ARTIST</a>
+                    <a href="./direct_booking.html" class="hover:text-[#DDCB82] transition-colors uppercase">DIRECT BOOKING</a>
+                    <a href="./news.html" class="hover:text-[#DDCB82] transition-colors uppercase">NEWS</a>
                     <a href="./index.html#contact" class="hover:text-[#DDCB82] transition-colors uppercase">CONTACT</a>
                     <a href="./fma_model_entry.html" class="hover:text-[#1C110C] hover:bg-[#d7be53] border border-[#d7be53] text-[#d7be53] px-3 py-1.5 rounded transition-all uppercase">応募フォーム</a>
                 </nav>
@@ -163,42 +156,62 @@
                         <a href="./models_all.html" class="mobile-link text-[#DDCB82] font-semibold">ALL</a>
                     </div>
                 </div>
-                <a href="./artist.html" class="mobile-link text-[#d7be53] hover:text-[#DDCB82] py-1 border-b border-white/5 transition-colors">ARTIST</a>
-                <a href="./direct_booking.html" class="mobile-link text-[#DDCB82] font-semibold py-1 border-b border-white/5 transition-colors">DIRECT BOOKING</a>
-                <a href="./index.html#news" class="mobile-link text-[#d7be53] hover:text-[#DDCB82] py-1 border-b border-white/5 transition-colors">NEWS</a>
+                <a href="./artist.html" class="mobile-link text-[#DDCB82] font-semibold py-1 border-b border-white/5 transition-colors">ARTIST</a>
+                <a href="./direct_booking.html" class="mobile-link text-[#d7be53] hover:text-[#DDCB82] py-1 border-b border-white/5 transition-colors">DIRECT BOOKING</a>
+                <a href="./news.html" class="mobile-link text-[#d7be53] hover:text-[#DDCB82] py-1 border-b border-white/5 transition-colors">NEWS</a>
                 <a href="./index.html#contact" class="mobile-link text-[#d7be53] hover:text-[#DDCB82] py-1 border-b border-white/5 transition-colors">CONTACT</a>
                 <a href="./fma_model_entry.html" class="mobile-link text-[#d7be53] font-bold py-2 border border-[#d7be53] rounded transition-colors">応募フォーム</a>
             </nav>
         </div>
     </header>
 
-    <!-- MAIN CONTENT -->
-    <main class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 w-full flex-grow">
+    <main class="max-w-[1400px] mx-auto px-4 pt-16 pb-24 w-full flex-grow">
         
-        <!-- HEADER TITLE -->
+        <!-- タイトルエリア -->
         <div class="text-center mb-12">
-            <p class="font-serif text-[#d7be53] text-xs tracking-[0.3em] uppercase mb-2">Fairy Models Agency</p>
-            <h1 class="font-serif text-3xl md:text-5xl tracking-[0.2em] text-white uppercase font-light">DIRECT BOOKING</h1>
+            <h1 class="font-serif text-3xl tracking-[0.2em] text-[#d7be53] uppercase font-light">ARTIST</h1>
+            <p class="text-[10px] tracking-widest text-gray-400 mt-3 uppercase">所属アーティスト</p>
+            <div class="w-28 h-[1px] bg-[#d7be53]/30 mx-auto mt-4"></div>
         </div>
 
-        <!-- CATEGORY FILTER TABS -->
-        <div class="flex flex-wrap justify-center gap-3 mb-16 text-xs tracking-[0.2em]">
-            <a href="./models_all.html" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ALL</a>
-            <a href="./index.html#models-woman" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">WOMAN</a>
-            <a href="./index.html#models-man" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">MAN</a>
-            <a href="./artist.html" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ARTIST</a>
-            <button onclick="filterModels('direct_booking', this)" class="filter-tab active border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">DIRECT BOOKING</button>
+        <!-- カテゴリフィルターボタン一覧 (ALL / WOMAN / MAN / ARTIST / DIRECT BOOKING) -->
+        <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-4 mb-16 text-xs tracking-[0.2em] uppercase font-medium">
+            <a href="./models_all.html" class="px-5 py-2 border border-[#d7be53]/30 text-[#d7be53] hover:border-[#d7be53] hover:bg-[#d7be53]/10 transition-all rounded">ALL</a>
+            <a href="./index.html#models-woman" class="px-5 py-2 border border-[#d7be53]/30 text-[#d7be53] hover:border-[#d7be53] hover:bg-[#d7be53]/10 transition-all rounded">WOMAN</a>
+            <a href="./index.html#models-man" class="px-5 py-2 border border-[#d7be53]/30 text-[#d7be53] hover:border-[#d7be53] hover:bg-[#d7be53]/10 transition-all rounded">MAN</a>
+            <a href="./artist.html" class="px-5 py-2 border border-[#d7be53] bg-[#d7be53] text-[#1C110C] font-semibold transition-all rounded shadow-md">ARTIST</a>
+            <a href="./direct_booking.html" class="px-5 py-2 border border-[#d7be53]/30 text-[#d7be53] hover:border-[#d7be53] hover:bg-[#d7be53]/10 transition-all rounded">DIRECT BOOKING</a>
         </div>
 
-        <!-- DIRECT BOOKING GRID (PC: 4列配置) -->
-        <div id="all-models-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"></div>
+        <!-- 1段目: WOMAN ARTIST セクション -->
+        <div id="artist-woman" class="mb-16">
+            <div class="mb-8 border-b border-white/5 pb-2">
+                <h3 class="font-serif text-lg tracking-[0.2em] text-[#d7be53] uppercase font-light">WOMAN</h3>
+            </div>
+            <div id="artist-woman-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"></div>
+        </div>
+
+        <!-- 2段目: MAN ARTIST セクション -->
+        <div id="artist-man" class="mb-16">
+            <div class="mb-8 border-b border-white/5 pb-2">
+                <h3 class="font-serif text-lg tracking-[0.2em] text-[#d7be53] uppercase font-light">MAN</h3>
+            </div>
+            <div id="artist-man-grid" class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8"></div>
+        </div>
+
+        <div class="text-center mt-16">
+            <a href="./index.html" class="text-xs tracking-widest text-gray-400 hover:text-[#d7be53] transition-colors inline-flex items-center gap-2 font-medium">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7 7-7-7m0 0l7-7m-7 7h18"></path></svg>
+                BACK TO TOP
+            </a>
+        </div>
 
     </main>
 
-    <!-- SECTION: CONTACT (index.html規格) -->
+    <!-- SECTION: CONTACT -->
     <section id="contact" class="py-24 bg-[#2A1A14] border-t border-white/5 text-[#DDCB82]">
         <div class="max-w-6xl mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 <div>
                     <h2 class="font-serif text-3xl text-[#d7be53] mb-8 tracking-[0.15em]">CONTACT</h2>
                     <div class="space-y-4 font-light text-sm tracking-wide text-[#DDCB82]/90">
@@ -212,7 +225,7 @@
                 
                 <div class="flex flex-col justify-center space-y-6">
                     <p class="text-xs text-gray-400 font-light tracking-widest leading-relaxed">
-                        出演・キャスティングのご依頼、各種お問い合わせ、モデル応募は下記専用フォームより承っております。
+                        出演・キャスティングのご依頼、各種お問い合わせ、エントリーは下記専用フォームより承っております。
                     </p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <a href="./contact.html" class="group block bg-[#d7be53] text-[#1C110C] py-4 text-center rounded transition-all duration-300 hover:bg-[#DDCB82] shadow-lg">
@@ -220,7 +233,7 @@
                             <span class="block text-xs tracking-[0.2em] font-bold uppercase">Contact Form</span>
                         </a>
                         <a href="./fma_model_entry.html" class="group block border border-[#d7be53] text-[#d7be53] hover:bg-[#d7be53] hover:text-[#1C110C] py-4 text-center rounded transition-all duration-300 shadow-lg">
-                            <span class="block text-[10px] tracking-[0.15em] font-medium opacity-80 mb-0.5">モデル応募</span>
+                            <span class="block text-[10px] tracking-[0.15em] font-medium opacity-80 mb-0.5">応募フォーム</span>
                             <span class="block text-xs tracking-[0.2em] font-bold uppercase">Entry Form</span>
                         </a>
                     </div>
@@ -229,7 +242,7 @@
         </div>
     </section>
 
-    <!-- FOOTER (index.html規格) -->
+    <!-- FOOTER -->
     <footer class="bg-[#110A07] py-12 text-center border-t border-white/5 space-y-4">
         <div class="flex flex-wrap justify-center gap-x-8 gap-y-2 text-xs tracking-[0.15em]">
             <a href="./company.html" class="text-[#DDCB82]/60 hover:text-[#d7be53] transition-colors">COMPANY / LEGAL</a>
@@ -248,7 +261,8 @@
         </svg>
     </button>
 
-    <!-- SCRIPTS -->
+<!-- 共通データファイルを読み込み -->
+    <script src="./assets/js/models_data.js"></script>
     <script>
     // 右クリック・ドラッグ防止
     document.addEventListener('contextmenu', (e) => { e.preventDefault(); });
@@ -273,25 +287,13 @@
         });
     });
 
-    // ダイレクトブッキング対象キャストデータ
-    const allCastsData = [
-        { 
-            category: "direct_booking", 
-            name: "SAYURI", 
-            size: "160 / 76 / 58 / 81 / 23.5", 
-            img: "./assets/direct_booking_image/sayuri/photo_1.webp", 
-            link: "./direct_booking/sayuri.html" 
-        }
-    ];
-
     const grid = document.getElementById('all-models-grid');
 
-    // キャスト描画処理
     function renderCasts(filterCategory = 'direct_booking') {
         grid.innerHTML = '';
-        const filteredList = filterCategory === 'all' 
-            ? allCastsData 
-            : allCastsData.filter(item => item.category === filterCategory);
+        const filteredList = (filterCategory === 'all'
+            ? [...ALL_CASTS_DATA]
+            : ALL_CASTS_DATA.filter(item => item.category === filterCategory)).reverse();
 
         if (filteredList.length === 0) {
             grid.innerHTML = `<div class="col-span-full text-center py-20 text-gray-500 font-serif tracking-widest text-sm">NO CASTS FOUND</div>`;
@@ -315,7 +317,6 @@
             grid.appendChild(card);
         });
 
-        // フェードイン適用
         setTimeout(() => {
             document.querySelectorAll('.fade-in-up').forEach((el, index) => {
                 setTimeout(() => el.classList.add('is-visible'), index * 80);
@@ -323,19 +324,14 @@
         }, 50);
     }
 
-    // フィルタータブ切り替え
     function filterModels(category, btnElement) {
         document.querySelectorAll('.filter-tab').forEach(btn => btn.classList.remove('active'));
-        if (btnElement) {
-            btnElement.classList.add('active');
-        }
+        if (btnElement) btnElement.classList.add('active');
         renderCasts(category);
     }
 
-    // 初回描画（DIRECT BOOKINGを選択状態）
     renderCasts('direct_booking');
 
-    // Topへ戻るボタン
     window.addEventListener('scroll', () => {
         const btn = document.getElementById('scrollTopBtn');
         if (window.scrollY > 300) {
@@ -346,6 +342,6 @@
             btn.classList.add('opacity-0', 'invisible');
         }
     });
-</script>
+    </script>
 </body>
 </html>
