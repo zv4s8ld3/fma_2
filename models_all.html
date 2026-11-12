@@ -152,18 +152,26 @@
     <main class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 w-full flex-grow">
         
         <!-- HEADER TITLE -->
-        <div class="text-center mb-12">
+        <div class="text-center mb-10">
             <p class="font-serif text-[#d7be53] text-xs tracking-[0.3em] uppercase mb-2">FAIRY MODELS AGENCY</p>
             <h1 class="font-serif text-3xl md:text-5xl tracking-[0.2em] text-white uppercase font-light">ALL CASTS</h1>
         </div>
 
         <!-- CATEGORY FILTER TABS -->
-        <div class="flex flex-wrap justify-center gap-3 mb-16 text-xs tracking-[0.2em]">
-            <button onclick="filterModels('all', this)" class="filter-tab active border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ALL</button>
-            <button onclick="filterModels('woman', this)" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">WOMAN</button>
-            <button onclick="filterModels('man', this)" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">MAN</button>
-            <button onclick="filterModels('artist', this)" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ARTIST</button>
-            <button onclick="filterModels('direct_booking', this)" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">DIRECT BOOKING</button>
+        <div class="flex flex-wrap justify-center gap-3 mb-6 text-xs tracking-[0.2em]">
+            <button onclick="setCategory('all', this)" class="filter-tab active border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ALL</button>
+            <button onclick="setCategory('woman', this)" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">WOMAN</button>
+            <button onclick="setCategory('man', this)" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">MAN</button>
+            <button onclick="setCategory('artist', this)" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">ARTIST</button>
+            <button onclick="setCategory('direct_booking', this)" class="filter-tab border border-[#d7be53]/40 text-[#d7be53] px-6 py-2 rounded transition-all duration-300 hover:border-[#d7be53]">DIRECT BOOKING</button>
+        </div>
+
+        <!-- SORT TABS (ランダム / 新着順 / A-Z順) -->
+        <div class="flex flex-wrap justify-center items-center gap-2 mb-14 text-[10px] tracking-[0.2em]">
+            <span class="text-gray-500 mr-1 uppercase">SORT :</span>
+            <button onclick="setSort('shuffle', this)" class="sort-tab border border-[#d7be53] bg-[#d7be53]/20 text-[#d7be53] px-4 py-1.5 rounded transition-all duration-300 hover:border-[#d7be53]">RANDOM</button>
+            <button onclick="setSort('newest', this)" class="sort-tab border border-white/15 text-gray-400 px-4 py-1.5 rounded transition-all duration-300 hover:border-[#d7be53] hover:text-[#d7be53]">NEW ARRIVAL</button>
+            <button onclick="setSort('az', this)" class="sort-tab border border-white/15 text-gray-400 px-4 py-1.5 rounded transition-all duration-300 hover:border-[#d7be53] hover:text-[#d7be53]">A - Z</button>
         </div>
 
         <!-- ALL MODELS GRID (PC: 4列配置) -->
@@ -224,7 +232,8 @@
         </svg>
     </button>
 
-    <!-- SCRIPTS -->
+   <!-- 共通データファイルを読み込み -->
+    <script src="./assets/js/models_data.js"></script>
     <script>
     // 右クリック・ドラッグ防止
     document.addEventListener('contextmenu', (e) => { e.preventDefault(); });
@@ -243,90 +252,54 @@
     }
     menuBtn.addEventListener('click', toggleMenu);
 
-    // 全キャストデータリスト（モデル＋アーティスト＋ダイレクトブッキング）
-    const allCastsData = [
-        /* WOMAN */
-        { category: "woman", name: "Isa", size: "171 / 83 / 60 / 83", img: "./assets/models_all_image/isa/photo_1.webp", link: "./models/models_all/isa.html" },
-        { category: "woman", name: "ANGELA", size: "172 / 85 / 69 / 95", img: "./assets/models_all_image/0_angela/photo_1.webp", link: "./models/models_all/angela.html" },
-        { category: "woman", name: "TAKAKO", size: "171 / 82 / 64 / 89", img: "./assets/models_image/takako/photo_1.webp", link: "./models/takako.html" },
-        { category: "woman", name: "Yumika", size: "170 / 79 / 67 / 85", img: "./assets/models_image/yumika/photo_1.webp", link: "./models/yumika.html" },
-        { category: "woman", name: "Alina L", size: "164 / 82 / 60 / 86", img: "./assets/models_image/alina/photo_1.webp", link: "./models/alina.html" },
-        { category: "woman", name: "Fadie", size: "160 / 82 / 62 / 90", img: "./assets/models_image/fadile/photo_1.webp", link: "./models/fadile.html" },
-        { category: "woman", name: "Aga", size: "161 / 75 / 59 / 85", img: "./assets/models_all_image/aga/photo_1.webp", link: "./models/models_all/aga.html" },
-        { category: "woman", name: "クレア由貴", size: "166 / 80 / 57 / 84", img: "./assets/models_all_image/claire_yuki/photo_1.webp", link: "./models/models_all/claire_yuki.html" },
-        { category: "woman", name: "Tania Pinkus", size: "163 / 97 / 73 / 98", img: "./assets/models_all_image/tania_pinkus/photo_1.webp", link: "./models/models_all/tania_pinkus.html" },
-        { category: "woman", name: "KiLi", size: "160 / 86 / 62 / 86", img: "./assets/models_all_image/kili/photo_1.webp", link: "./models/models_all/kili.html" },
-        { category: "woman", name: "MARITZA", size: "160 / 82 / 63 / 86", img: "./assets/models_all_image/maritza/photo_1.webp", link: "./models/models_all/maritza.html" },
-        { category: "woman", name: "KIARA", size: "175 / 86 / 62 / 92", img: "./assets/models_all_image/kiara/photo_1.webp", link: "./models/models_all/kiara.html" },
-        { category: "woman", name: "Anni", size: "161 / 78 / 59 / 85", img: "./assets/models_all_image/anni/photo_1.webp", link: "./models/models_all/anni.html" },
-   /*     { category: "woman", name: "Hinata", size: "167 / 76 / 62 / 81", img: "./assets/models_all_image/hinata/photo_2.jpg", link: "./models/models_all/hinata.html" }, */
-        { category: "woman", name: "Kayty", size: "168 / 88 / 64 / 98", img: "./assets/models_all_image/kayty/photo_1.webp", link: "./models/models_all/kayty.html" },
-        { category: "woman", name: "Natali W", size: "173 / 86 / 67 / 93", img: "./assets/models_all_image/natali_w/photo_1.webp", link: "./models/models_all/natali_w.html" },
-        { category: "woman", name: "Michelle", size: "160 / 82 / 65 / 88", img: "./assets/models_all_image/michelle/photo_1.webp", link: "./models/models_all/michelle.html" },
-        
-        /* MAN */
-        { category: "man", name: "Jojo", size: "183 / 97 / 79 / 95", img: "./assets/models_all_image/jojo/photo_1.webp", link: "./models/models_all/jojo.html" },
-        { category: "man", name: "Ivan R", size: "168 / 87 / 72 / 84", img: "./assets/models_all_image/ivan_r/photo_1.webp", link: "./models/models_all/ivan_r.html" },
-        { category: "man", name: "Tom Constantine", size: "175 / 100 / 80 / 94", img: "./assets/models_all_image/tom_constanitine/photo_2.webp", link: "./models/models_all/tom_constantine.html" },
-        { category: "man", name: "Taiyo", size: "169 / 81 / 66 / 87", img: "./assets/models_all_image/taiyo/photo_1.webp", link: "./models/models_all/taiyo.html" },
-        { category: "man", name: "Aurelien", size: "177 / 100 / 76 / 88", img: "./assets/models_all_image/aurelien/photo_1.webp", link: "./models/models_all/aurelien.html" },
-        { category: "man", name: "Richard Wilson", size: "183 / 96 / 95 / 101", img: "./assets/models_all_image/richard_wilson/photo_1.webp", link: "./models/models_all/richard_wilson.html" },
-        { category: "man", name: "Dennis", size: "176 / 96 / 90 / 93", img: "./assets/models_all_image/dennis/photo_1.webp", link: "./models/models_all/dennis.html" },
-        { category: "man", name: "Alfred", size: "179 / 99 / 82 / 92", img: "./assets/models_all_image/alfred/photo_1.webp", link: "./models/models_all/alfred.html" },
-        { category: "man", name: "Akira", size: "173 / 94 / 82 / 100", img: "./assets/models_all_image/akira/photo_1.webp", link: "./models/models_all/akira.html" },
-        { category: "man", name: "Gaz", size: "184 / 94 / 80 / 94", img: "./assets/models_all_image/gaz/photo_1.webp", link: "./models/models_all/gaz.html" },
-        { category: "man", name: "HD", size: "180 / 95 / 79 / 107", img: "./assets/models_all_image/hd/photo_1.webp", link: "./models/models_all/hd.html" },
-        { category: "man", name: "Jordy", size: "180 / 88 / 75 / 88", img: "./assets/models_all_image/jordy/photo_1.webp", link: "./models/models_all/jordy.html" },
-        { category: "man", name: "Regan W", size: "179 / 98 / 92 / 94", img: "./assets/models_all_image/regan_w/photo_1.webp", link: "./models/models_all/regan_w.html" },
-        { category: "man", name: "Niclas E", size: "171 / 96 / 86 / 99", img: "./assets/models_all_image/niclas_e/photo_1.webp", link: "./models/models_all/niclas_e.html" },
-        { category: "man", name: "Paolo Andrea Pietro", size: "188 / 120 / 96 / 112", img: "./assets/models_all_image/paolo/photo_1.webp", link: "./models/models_all/paolo.html" },
-        { category: "man", name: "Leigh", size: "178 / 112 / 88 / 110", img: "./assets/models_all_image/leigh/photo_1.webp", link: "./models/models_all/leigh.html" },
-        { category: "man", name: "Julien J", size: "177 / 98 / 75 / 95", img: "./assets/models_all_image/julien_j/photo_1.webp", link: "./models/models_all/julien_j.html" },
-        { category: "man", name: "航波", size: "182 / 99 / 78 / 100", img: "./assets/models_all_image/koha/photo_1.webp", link: "./models/models_all/koha.html" },
-        { category: "man", name: "Ryo", size: "182 / 96 / 80 / 97", img: "./assets/models_all_image/ryo/photo_1.webp", link: "./models/models_all/ryo.html" },
-        { category: "man", name: "So", size: "182 / 83 / 67 / 84", img: "./assets/models_all_image/so/photo_1.webp", link: "./models/models_all/so.html" },
-        { category: "man", name: "Tyler T", size: "186 / 99 / 80 / 98", img: "./assets/models_all_image/tyler_t/photo_1.webp", link: "./models/models_all/tyler_t.html" },
-        { category: "man", name: "JEREMY FONDA", size: "181 / 101 / 82 / 95", img: "./assets/models_all_image/jeremy_fonda/photo_1.webp", link: "./models/models_all/jeremy_fonda.html" },
-        { category: "man", name: "RAFAEL", size: "174 / 88 / 72 / 90", img: "./assets/models_all_image/rafael/photo_1.webp", link: "./models/models_all/rafael.html" },
-        { category: "man", name: "Amir", size: "181 / 96 / 76 / 96", img: "./assets/models_all_image/amir/photo_1.webp", link: "./models/models_all/amir.html" },
-        { category: "man", name: "Ash", size: "180 / 93 / 76 / 86", img: "./assets/models_all_image/ash/photo_1.webp", link: "./models/models_all/ash.html" },
-        { category: "man", name: "BEN", size: "180 / 91 / 71 / 91", img: "./assets/models_all_image/ben/photo_1.webp", link: "./models/models_all/ben.html" },
-        { category: "man", name: "CHRISTOPHE", size: "183 / 109 / 86 / 106", img: "./assets/models_all_image/christophe/photo_1.webp", link: "./models/models_all/christophe.html" },
-        { category: "man", name: "STEVE WILEY", size: "181 / 104 / 90 / 102", img: "./assets/models_all_image/steve_wiley/photo_1.webp", link: "./models/models_all/steve_wiley.html" },
-        { category: "man", name: "JOHANNES", size: "185 / 95 / 81 / 93", img: "./assets/models_all_image/johannes/photo_1.webp", link: "./models/models_all/johannes.html" },
-        { category: "man", name: "Bhuiyan", size: "180 / 90 / 73 / 88", img: "./assets/models_image/bhuiyan/photo_1.webp", link: "./models/bhuiyan.html" },
-        { category: "man", name: "Alex", size: "180 / 96 / 98 / 95", img: "./assets/models_image/alex/photo_1.webp", link: "./models/alex.html" },
-        { category: "man", name: "KOU", size: "181 / 101.5 / 78 / 101", img: "./assets/models_image/kou/photo_1.webp", link: "./models/kou.html" },
-
-        /* ARTIST */
-        { category: "artist", name: "齊藤 英里", size: "160 / 76 / 58 / 81", img: "./assets/artists_image/eri_saito/photo_1.webp", link: "./artists/eri_saito.html" },
-        { category: "artist", name: "VIVIAN", size: "173 / 94 / 74 / 95", img: "./assets/artists_image/vivian/photo_1.webp", link: "./artists/vivian.html" },
-        { category: "artist", name: "KEIKO", size: "180 / 81 / 66 / 91", img: "./assets/artists_image/keiko/photo_1.webp", link: "./artists/keiko.html" },
-
-        /* DIRECT BOOKING */
-        { category: "direct_booking", name: "SAYURI", size: "160 / 76 / 58 / 81", img: "./assets/direct_booking_image/sayuri/photo_1.webp", link: "./direct_booking/sayuri.html" }
-    ];
-
     const grid = document.getElementById('all-models-grid');
+    let currentCategory = 'all';
+    let currentSort = 'shuffle'; // 初期表示はランダム（新着順にしたい場合は 'newest' に変更）
 
-    // キャスト描画処理
-    function renderCasts(filterCategory = 'all') {
+    // Fisher-Yates シャッフル関数
+    function shuffleArray(array) {
+        const arr = [...array];
+        for (let i = arr.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [arr[i], arr[j]] = [arr[j], arr[i]];
+        }
+        return arr;
+    }
+
+   // キャスト描画処理
+    function renderCasts() {
         grid.innerHTML = '';
-        const filteredList = filterCategory === 'all' 
-            ? allCastsData 
-            : allCastsData.filter(item => item.category === filterCategory);
 
-        if (filteredList.length === 0) {
+        // 1. カテゴリー絞り込み
+        let list = currentCategory === 'all'
+            ? [...ALL_CASTS_DATA]
+            : ALL_CASTS_DATA.filter(item => item.category === currentCategory);
+
+        // 2. 並び替え
+        if (currentSort === 'shuffle') {
+            list = shuffleArray(list);
+        } else if (currentSort === 'newest') {
+            // 配列は下が最新なのでそのまま逆順にする（NEWバッジが最上段、ピックアップは下に来る）
+            list = [...list].reverse();
+        } else if (currentSort === 'az') {
+            list.sort((a, b) => a.name.localeCompare(b.name, 'en'));
+        }
+
+        if (list.length === 0) {
             grid.innerHTML = `<div class="col-span-full text-center py-20 text-gray-500 font-serif tracking-widest text-sm">NO CASTS FOUND</div>`;
             return;
         }
+        list.forEach(model => {
+            const newBadge = model.isNew
+                ? `<span class="absolute top-2.5 right-2.5 z-20 bg-[#1C110C]/85 border border-[#d7be53] text-[#d7be53] text-[9px] tracking-[0.2em] px-2 py-0.5 rounded-sm font-medium uppercase">NEW</span>`
+                : '';
 
-        filteredList.forEach(model => {
             const card = document.createElement('div');
             card.className = "fade-in-up transition-all duration-300 group cursor-pointer text-center";
             card.innerHTML = `
                 <a href="${model.link}" class="block">
                     <div class="flash-hover aspect-[2/3] w-full bg-[#2A1A14] overflow-hidden relative mb-4 rounded-sm border border-white/5">
+                        ${newBadge}
                         <img src="${model.img}" alt="${model.name}" class="w-full h-full object-cover opacity-90 transition-all duration-1000 group-hover:scale-105 group-hover:opacity-100">
                     </div>
                     <div class="pb-2">
@@ -338,25 +311,37 @@
             grid.appendChild(card);
         });
 
-        // フェードイン適用
         setTimeout(() => {
             document.querySelectorAll('.fade-in-up').forEach((el, index) => {
-                setTimeout(() => el.classList.add('is-visible'), index * 80);
+                setTimeout(() => el.classList.add('is-visible'), index * 50);
             });
-        }, 50);
+        }, 30);
     }
 
-    // フィルタータブ切り替え
-    function filterModels(category, btnElement) {
+    // カテゴリー切り替え
+    function setCategory(category, btnElement) {
+        currentCategory = category;
         document.querySelectorAll('.filter-tab').forEach(btn => btn.classList.remove('active'));
-        if (btnElement) {
-            btnElement.classList.add('active');
-        }
-        renderCasts(category);
+        if (btnElement) btnElement.classList.add('active');
+        renderCasts();
     }
 
-    // 初回描画（ALLを選択状態）
-    renderCasts('all');
+    // 並び順切り替え
+    function setSort(sortType, btnElement) {
+        currentSort = sortType;
+        document.querySelectorAll('.sort-tab').forEach(btn => {
+            btn.classList.remove('border-[#d7be53]', 'bg-[#d7be53]/20', 'text-[#d7be53]');
+            btn.classList.add('border-white/15', 'text-gray-400');
+        });
+        if (btnElement) {
+            btnElement.classList.remove('border-white/15', 'text-gray-400');
+            btnElement.classList.add('border-[#d7be53]', 'bg-[#d7be53]/20', 'text-[#d7be53]');
+        }
+        renderCasts();
+    }
+
+    // 初回描画
+    renderCasts();
 
     // Topへ戻るボタン
     window.addEventListener('scroll', () => {
@@ -365,10 +350,10 @@
             btn.classList.remove('opacity-0', 'invisible');
             btn.classList.add('opacity-100', 'visible');
         } else {
-            btn.classList.remove('opacity-100', 'invisible');
+            btn.classList.remove('opacity-100', 'visible');
             btn.classList.add('opacity-0', 'invisible');
         }
     });
-</script>
+    </script>
 </body>
 </html>
