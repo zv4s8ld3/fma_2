@@ -55,7 +55,7 @@ const ALL_CASTS_DATA = [
     // ==========================================
     // 2026.11.02 加入
     // ==========================================
-    { category: "woman", gender: "woman", name: "ANGELA", size: "172 / 85 / 69 / 95", img: "./assets/models_all_image/0_angela/photo_1.webp", link: "./models/models_all/angela.html", isPickup: false, isNew: false },
+    { category: "woman", gender: "woman", name: "Angela Nile", size: "172 / 85 / 69 / 95", img: "./assets/models_all_image/0_angela/photo_1.webp", link: "./models/models_all/angela.html", isPickup: false, isNew: false },
     { category: "artist", gender: "woman", name: "Eri Saito", size: "160 / 76 / 58 / 81", img: "./assets/artists_image/eri_saito/photo_1.webp", link: "./artists/eri_saito.html", isPickup: false, isNew: false },
     { category: "artist", gender: "woman", name: "VIVIAN", size: "173 / 94 / 74 / 95", img: "./assets/artists_image/vivian/photo_1.webp", link: "./artists/vivian.html", isPickup: false, isNew: false },
     { category: "artist", gender: "woman", name: "KEIKO", size: "180 / 81 / 66 / 91", img: "./assets/artists_image/keiko/photo_1.webp", link: "./artists/keiko.html", isPickup: false, isNew: false },
