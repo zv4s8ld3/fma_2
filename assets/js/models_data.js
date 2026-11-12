@@ -40,7 +40,7 @@ const ALL_CASTS_DATA = [
     // 2026.10.23 加入（トップページ PICKUP WOMAN）
     // ※index.html の並び順（TAKAKO → Yumika → Alina L → Fadie）を維持するためピックアップ順も調整済
     // ==========================================
-    { category: "woman", gender: "woman", name: "Fadie", size: "160 / 82 / 62 / 90", img: "./assets/models_image/fadile/photo_1.webp", link: "./models/fadile.html", isPickup: true, isNew: false },
+    { category: "woman", gender: "woman", name: "Fadile", size: "160 / 82 / 62 / 90", img: "./assets/models_image/fadile/photo_1.webp", link: "./models/fadile.html", isPickup: true, isNew: false },
     { category: "woman", gender: "woman", name: "Alina L", size: "164 / 82 / 60 / 86", img: "./assets/models_image/alina/photo_1.webp", link: "./models/alina.html", isPickup: true, isNew: false },
     { category: "woman", gender: "woman", name: "Yumika", size: "170 / 79 / 67 / 85", img: "./assets/models_image/yumika/photo_1.webp", link: "./models/yumika.html", isPickup: true, isNew: false },
 
