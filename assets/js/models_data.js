@@ -94,7 +94,7 @@ const ALL_CASTS_DATA = [
     // ==========================================
     // 2026.11.12 加入（最新 2名・NEWバッジ対象）
     // ==========================================
-    { category: "woman", gender: "woman", name: "國立 華連", size: "163 / 88 / 63 / 90", img: "./assets/models_all_image/karen_kokuryu/photo_1.webp", link: "./models/models_all/karen_kokuryu.html", isPickup: false, isNew: true, joinDate: "2026-11-12" },
+    { category: "woman", gender: "woman", name: "國立 華蓮", size: "163 / 88 / 63 / 90", img: "./assets/models_all_image/karen_kokuryu/photo_1.webp", link: "./models/models_all/karen_kokuryu.html", isPickup: false, isNew: true, joinDate: "2026-11-12" },
     { category: "woman", gender: "woman", name: "Maria R", size: "169 / 88 / 59 / 90", img: "./assets/models_all_image/maria_r/photo_1.webp", link: "./models/models_all/maria_r.html", isPickup: false, isNew: true, joinDate: "2026-11-12" }
 ];
 
